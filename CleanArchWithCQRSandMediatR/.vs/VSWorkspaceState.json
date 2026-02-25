@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CleanArchWithCQRSandMediatR.API",
+    "\\CleanArchWithCQRSandMediatR.Application",
+    "\\CleanArchWithCQRSandMediatR.Application\\Blogs",
+    "\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands",
+    "\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog",
+    "\\CleanArchWithCQRSandMediatR.Application\\Common",
+    "\\CleanArchWithCQRSandMediatR.Domain",
+    "\\CleanArchWithCQRSandMediatR.Infrastructure"
+  ],
+  "PreviewInSolutionExplorer": false
+}

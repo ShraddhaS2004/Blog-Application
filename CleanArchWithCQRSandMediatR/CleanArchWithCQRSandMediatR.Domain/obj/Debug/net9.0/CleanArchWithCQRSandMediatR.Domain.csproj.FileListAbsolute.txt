@@ -1,0 +1,12 @@
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\bin\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.deps.json
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\bin\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.dll
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\bin\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.pdb
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\obj\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.csproj.AssemblyReference.cache
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\obj\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\obj\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.AssemblyInfoInputs.cache
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\obj\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.AssemblyInfo.cs
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\obj\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\obj\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.dll
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\obj\Debug\net9.0\refint\CleanArchWithCQRSandMediatR.Domain.dll
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\obj\Debug\net9.0\CleanArchWithCQRSandMediatR.Domain.pdb
+C:\Users\ShraddhaShenoy\source\repos\CleanArchWithCQRSandMediatR\CleanArchWithCQRSandMediatR.Domain\obj\Debug\net9.0\ref\CleanArchWithCQRSandMediatR.Domain.dll
