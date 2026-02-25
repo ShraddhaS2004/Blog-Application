@@ -8,6 +8,8 @@ build/
 **/dist/
 **/build/
 
+.angular/
+
 # Environment variables
 .env
 .env.local
