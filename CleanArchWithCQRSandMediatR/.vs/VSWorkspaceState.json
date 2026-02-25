@@ -10,5 +10,6 @@
     "\\CleanArchWithCQRSandMediatR.Domain",
     "\\CleanArchWithCQRSandMediatR.Infrastructure"
   ],
+  "SelectedNode": "\\CleanArchWithCQRSandMediatR.API\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }
