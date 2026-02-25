@@ -1,0 +1,25 @@
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Edit Blog' : 'Create Blog' }}</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="blog.name" name="name" required>
+    </div>
+
+    <div>
+      <label>Description:</label>
+      <textarea [(ngModel)]="blog.description" name="description" required></textarea>
+    </div>
+
+    <div>
+      <label>Author:</label>
+      <input type="text" [(ngModel)]="blog.author" name="author" required>
+    </div>
+
+    <div class="button-group">
+      <button type="submit">Save</button>
+      <button type="button" routerLink="/">Cancel</button>
+    </div>
+  </form>
+</div>

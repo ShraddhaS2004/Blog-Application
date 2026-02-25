@@ -1,0 +1,23 @@
+<div class="list-container">
+  <h2>Blogs</h2>
+
+  <div class="action-bar">
+    <button (click)="create()">+ Create New Blog</button>
+  </div>
+
+  <div *ngIf="!loading && blogs.length === 0" class="empty-state">
+    No blogs found. Create your first blog to get started!
+  </div>
+
+  <div class="blogs-grid">
+    <div *ngFor="let blog of blogs" class="blog-card">
+      <h3>{{ blog.name }}</h3>
+      <p>{{ blog.description }}</p>
+      <small>By {{ blog.author }}</small>
+      <div class="blog-card-actions">
+        <button (click)="edit(blog.id!)">Edit</button>
+        <button (click)="delete(blog.id!)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
