@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { Blog } from '../../models/blog';
+import { MaterialModule } from '../../material/material.module';
 
 @Component({
   selector: 'app-blog-form',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MaterialModule],
   templateUrl: './blog-form.component.html',
   styleUrls: ['./blog-form.component.css']
 })
@@ -39,6 +40,9 @@ export class BlogFormComponent implements OnInit {
     }
   }
 
+  onCancel() {
+  this.router.navigate(['/']);
+  }
   onSubmit() {
     if (this.isEditMode) {
       this.blogService.update(this.blog.id!, this.blog)

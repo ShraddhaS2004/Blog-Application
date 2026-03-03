@@ -8,7 +8,7 @@ import { Blog } from '../models/blog';
 })
 export class BlogService {
 
-  private apiUrl = 'http://localhost:5103/Blog'; // adjust port if needed
+  private apiUrl = 'http://localhost:5103/Blog'; 
 
   constructor(private http: HttpClient) {}
 

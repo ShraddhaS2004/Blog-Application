@@ -4,11 +4,12 @@ import { Router, RouterModule } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { Blog } from '../../models/blog';
 import { ChangeDetectorRef } from '@angular/core';
+import { MaterialModule } from '../../material/material.module';
 
 @Component({
   selector: 'app-blog-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MaterialModule],
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.css']
 })
@@ -29,31 +30,25 @@ export class BlogListComponent implements OnInit {
   }
 
   loadBlogs(): void {
-  this.loading = true;
+    this.loading = true;
 
-  this.blogService.getAll().subscribe({
-    next: (data) => {
-      this.blogs = Array.isArray(data) ? data : data ? [data] : [];
-      this.loading = false;
-      console.log('Blogs loaded:', this.blogs);
-
-      this.cd.markForCheck(); // <-- Force Angular to update view
-    },
-    error: (err) => {
-      console.error('Failed to load blogs:', err);
-      this.errorMessage = 'Failed to load blogs.';
-      this.loading = false;
-      this.cd.markForCheck();
-    }
-  });
-}
+    this.blogService.getAll().subscribe({
+      next: (data) => {
+        this.blogs = Array.isArray(data) ? data : data ? [data] : [];
+        this.loading = false;
+        this.cd.markForCheck();
+      },
+      error: (err) => {
+        this.errorMessage = 'Failed to load blogs.';
+        this.loading = false;
+        this.cd.markForCheck();
+      }
+    });
+  }
 
   delete(id: number): void {
     if (confirm('Are you sure you want to delete this blog?')) {
-      this.blogService.delete(id).subscribe({
-        next: () => this.loadBlogs(),
-        error: (err) => console.error(err)
-      });
+      this.blogService.delete(id).subscribe(() => this.loadBlogs());
     }
   }
 

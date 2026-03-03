@@ -1,3 +1,4 @@
+using CleanArchWithCQRSandMediatR.API.Middleware;
 using CleanArchWithCQRSandMediatR.Application;
 using CleanArchWithCQRSandMediatR.Infrastructure;
 
@@ -34,6 +35,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("AllowAngular");
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseAuthorization();
 

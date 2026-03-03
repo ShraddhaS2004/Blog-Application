@@ -25,7 +25,11 @@ namespace CleanArchWithCQRSandMediatR.API.Controllers
             var blog = await Mediator.Send(new GetBlogByIdQuery() { Id = id });
             if (blog == null)
             {
-                return NotFound();
+                return NotFound(new
+                {
+                    message = "The blog you're looking for doesn't exist. Please try again.",
+                    statusCode = 404
+                });
             }
             return Ok(blog);
         }

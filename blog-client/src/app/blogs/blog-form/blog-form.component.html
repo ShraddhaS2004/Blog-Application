@@ -1,25 +1,53 @@
-<div class="form-container">
-  <h2>{{ isEditMode ? 'Edit Blog' : 'Create Blog' }}</h2>
+<div class="form-wrapper">
 
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label>Name:</label>
-      <input type="text" [(ngModel)]="blog.name" name="name" required>
-    </div>
+  <mat-card class="form-card">
 
-    <div>
-      <label>Description:</label>
-      <textarea [(ngModel)]="blog.description" name="description" required></textarea>
-    </div>
+    <mat-card-title>
+      {{ isEditMode ? 'Edit Blog' : 'Create Blog' }}
+    </mat-card-title>
 
-    <div>
-      <label>Author:</label>
-      <input type="text" [(ngModel)]="blog.author" name="author" required>
-    </div>
+    <mat-card-content>
 
-    <div class="button-group">
-      <button type="submit">Save</button>
-      <button type="button" routerLink="/">Cancel</button>
-    </div>
-  </form>
+      <form (ngSubmit)="onSubmit()" #blogForm="ngForm">
+
+        <div class="form-fields">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="blog.name" name="name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput rows="4"
+              [(ngModel)]="blog.description"
+              name="description"
+              required>
+            </textarea>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Author</mat-label>
+            <input matInput [(ngModel)]="blog.author" name="author" required>
+          </mat-form-field>
+
+        </div>
+
+        <div class="button-group">
+          <button mat-stroked-button color="accent" type="button" (click)="onCancel()">
+            Cancel
+          </button>
+          <button mat-raised-button color="primary" type="submit">
+            {{ isEditMode ? 'Update' : 'Save' }}
+          </button>
+
+          
+        </div>
+
+      </form>
+
+    </mat-card-content>
+
+  </mat-card>
+
 </div>

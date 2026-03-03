@@ -1,66 +1,50 @@
 :host {
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 2rem;
-  min-height: auto; /* Remove full-page height */
-  height: auto; /* Let the content decide the height */
 }
 
-.form-container {
+.form-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
   width: 100%;
   max-width: 500px;
-  background: white;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(91, 159, 216, 0.12);
-  border: 1px solid #D0E8F2;
-  margin: auto; /* Make sure it stays centered */
+  padding: 2rem;
 }
 
-h2 {
+mat-card-title {
   text-align: center;
-  margin-bottom: 2rem;
-  color: #1E3A5F;
-  font-size: 1.75rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  align-items: center; /* CENTER CONTENT */
+}
+
+.form-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* CENTER LABEL + INPUT */
   gap: 1.5rem;
 }
 
-form > div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+mat-form-field {
+  width: 100%;
+  max-width: 400px; /* Keeps fields centered and not full width */
 }
 
 .button-group {
+  margin-top: 2rem;
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
-}
-
-button {
-  flex: 1;
-  padding: 0.75rem 1.5rem;
-}
-
-button[type="submit"] {
-  background-color: #5B9FD8;
-}
-
-button[type="submit"]:hover {
-  background-color: #4A8AC5;
-}
-
-button:last-of-type {
-  background-color: #A0B8D8;
-}
-
-button:last-of-type:hover {
-  background-color: #8FA5C5;
+  width: 100%;
 }
