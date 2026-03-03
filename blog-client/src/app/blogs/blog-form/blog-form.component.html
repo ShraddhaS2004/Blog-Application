@@ -14,7 +14,8 @@
 
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="blog.name" name="name" required>
+            <input matInput [(ngModel)]="blog.name" name="name" required (ngModelChange)="onInputChange()">
+            <mat-error *ngIf="blogForm.submitted && !blog.name">Name is required.</mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -22,13 +23,15 @@
             <textarea matInput rows="4"
               [(ngModel)]="blog.description"
               name="description"
-              required>
+              required (ngModelChange)="onInputChange()">
             </textarea>
+            <mat-error *ngIf="blogForm.submitted && !blog.description">Description is required.</mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
             <mat-label>Author</mat-label>
-            <input matInput [(ngModel)]="blog.author" name="author" required>
+            <input matInput [(ngModel)]="blog.author" name="author" required (ngModelChange)="onInputChange()">
+            <mat-error *ngIf="blogForm.submitted && !blog.author">Author is required.</mat-error>
           </mat-form-field>
 
         </div>
@@ -37,11 +40,9 @@
           <button mat-stroked-button color="accent" type="button" (click)="onCancel()">
             Cancel
           </button>
-          <button mat-raised-button color="primary" type="submit">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!blogForm.form.valid">
             {{ isEditMode ? 'Update' : 'Save' }}
           </button>
-
-          
         </div>
 
       </form>

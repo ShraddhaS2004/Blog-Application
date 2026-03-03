@@ -48,3 +48,8 @@ mat-form-field {
   justify-content: center;
   width: 100%;
 }
+
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}

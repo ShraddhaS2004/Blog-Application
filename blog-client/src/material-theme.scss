@@ -6,6 +6,12 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+:root {
+  --mat-primary-color: #1e88e5; /* Azure Blue */
+  --mat-accent-color: #ff5722;  /* Amber */
+  --mat-background-color: #ffffff; /* White background */
+}
+
 html {
   height: 100%;
   @include mat.theme((
