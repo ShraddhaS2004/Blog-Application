@@ -1,6 +1,7 @@
 ﻿using CleanArchWithCQRSandMediatR.Domain.Entities;
 using CleanArchWithCQRSandMediatR.Domain.Repository;
 using CleanArchWithCQRSandMediatR.Infrastructure.Data;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Frozen;
@@ -14,10 +15,11 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure.Repository
     public class BlogRepository : IBlogRepsitory
     {
         private readonly BlogDbContext _blogDbContext;
+        private readonly SqlConnectionFactory _connectionFactory;
 
         public BlogRepository(BlogDbContext blogDbContext)
         {
-            _blogDbContext=blogDbContext;
+            _blogDbContext = blogDbContext;
         }
         public async Task<Blog> CreateAsync(Blog blog)
         {
@@ -35,7 +37,7 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure.Repository
 
         public async Task<List<Blog>> GetAllAsync()
         {
-            
+
             return await _blogDbContext.Blogs.ToListAsync();
         }
 
@@ -48,7 +50,7 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure.Repository
         public async Task<int> UpdateAsync(int id, Blog blog)
         {
             return await _blogDbContext.Blogs
-                .Where(model=>model.Id == id)
+                .Where(model => model.Id == id)
                 .ExecuteUpdateAsync(setters =>
                     setters
                         .SetProperty(model => model.Name, blog.Name)

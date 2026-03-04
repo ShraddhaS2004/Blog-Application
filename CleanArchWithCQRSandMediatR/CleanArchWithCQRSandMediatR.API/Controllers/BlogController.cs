@@ -3,6 +3,8 @@ using CleanArchWithCQRSandMediatR.Application.Blogs.Commands.DeleteBlog;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Commands.UpdateBlog;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogs;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsById;
+using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsByIdDapper;
+using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsDapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,10 +21,32 @@ namespace CleanArchWithCQRSandMediatR.API.Controllers
             return Ok(blogs);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllDapperAsync()
+        {
+            var blogs = await Mediator.Send(new GetBlogsDapperQuery());
+            return Ok(blogs);
+        }
+
         [HttpGet("{id}",Name ="GetBlogById")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var blog = await Mediator.Send(new GetBlogByIdQuery() { Id = id });
+            if (blog == null)
+            {
+                return NotFound(new
+                {
+                    message = "The blog you're looking for doesn't exist. Please try again.",
+                    statusCode = 404
+                });
+            }
+            return Ok(blog);
+        }
+
+        [HttpGet("{id}", Name = "GetBlogByIdDapper")]
+        public async Task<IActionResult> GetByIdDapperAsync(int id)
+        {
+            var blog = await Mediator.Send(new GetBlogByIdDapperQuery() { Id = id });
             if (blog == null)
             {
                 return NotFound(new

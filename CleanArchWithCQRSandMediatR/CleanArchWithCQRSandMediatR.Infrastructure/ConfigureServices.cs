@@ -1,14 +1,15 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CleanArchWithCQRSandMediatR.Application.Common.Interfaces;
+using CleanArchWithCQRSandMediatR.Domain.Repository;
+using CleanArchWithCQRSandMediatR.Infrastructure.Data;
+using CleanArchWithCQRSandMediatR.Infrastructure.Repository;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
-using CleanArchWithCQRSandMediatR.Infrastructure.Data;
-using CleanArchWithCQRSandMediatR.Domain.Repository;
-using CleanArchWithCQRSandMediatR.Infrastructure.Repository;
 
 
 
@@ -26,6 +27,8 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure
                     throw new InvalidOperationException("connection string 'BlogDbContext' not found"));
             });
             services.AddTransient<IBlogRepsitory, BlogRepository>();
+            services.AddScoped<IBlogReadRepository, BlogReadRepository>();
+            services.AddScoped<ISqlConnectionFactory, SqlConnectionFactory>();
             return services;
         }
 

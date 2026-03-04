@@ -7,8 +7,48 @@
       "RelativeMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|solutionrelative:cleanarchwithcqrsandmediatr.api\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.api\\controllers\\apicontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|solutionrelative:cleanarchwithcqrsandmediatr.api\\controllers\\apicontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\common\\interfaces\\iblogreadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\common\\interfaces\\iblogreadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsdapper\\getblogsdapperqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsdapper\\getblogsdapperqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\common\\interfaces\\isqlconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\common\\interfaces\\isqlconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.infrastructure\\data\\sqlconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|solutionrelative:cleanarchwithcqrsandmediatr.infrastructure\\data\\sqlconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.infrastructure\\repository\\blogreadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|solutionrelative:cleanarchwithcqrsandmediatr.infrastructure\\repository\\blogreadrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.infrastructure\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|solutionrelative:cleanarchwithcqrsandmediatr.infrastructure\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\getblogqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\getblogqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyiddapper\\getblogbyiddapperqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyiddapper\\getblogbyiddapperqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsdapper\\getblogsdapperquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsdapper\\getblogsdapperquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\getblogquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\getblogquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyiddapper\\getblogbyiddapperquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyiddapper\\getblogbyiddapperquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -19,48 +59,92 @@
       "RelativeMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|solutionrelative:cleanarchwithcqrsandmediatr.infrastructure\\configureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|solutionrelative:cleanarchwithcqrsandmediatr.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\configureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\configureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.infrastructure\\cleanarchwithcqrsandmediatr.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|solutionrelative:cleanarchwithcqrsandmediatr.infrastructure\\cleanarchwithcqrsandmediatr.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.infrastructure\\data\\blogdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|solutionrelative:cleanarchwithcqrsandmediatr.infrastructure\\data\\blogdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.infrastructure\\cleanarchwithcqrsandmediatr.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|solutionrelative:cleanarchwithcqrsandmediatr.infrastructure\\cleanarchwithcqrsandmediatr.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\cleanarchwithcqrsandmediatr.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\cleanarchwithcqrsandmediatr.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.api\\cleanarchwithcqrsandmediatr.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|solutionrelative:cleanarchwithcqrsandmediatr.api\\cleanarchwithcqrsandmediatr.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.infrastructure\\migrations\\blogdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|solutionrelative:cleanarchwithcqrsandmediatr.infrastructure\\migrations\\blogdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.infrastructure\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B1E5939-D95E-490E-B939-F25E237065B4}|CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj|solutionrelative:cleanarchwithcqrsandmediatr.infrastructure\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyid\\getblogbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyid\\getblogbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\commands\\createblog\\createblogcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\commands\\createblog\\createblogcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CAA12530-08D9-435F-A8A7-601CAFADEAFE}|CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.domain\\repository\\iblogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA12530-08D9-435F-A8A7-601CAFADEAFE}|CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj|solutionrelative:cleanarchwithcqrsandmediatr.domain\\repository\\iblogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\configureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\configureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\common\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\common\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\common\\mappings\\imapfrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\common\\mappings\\imapfrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\common\\behaviors\\validationbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\common\\behaviors\\validationbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|solutionrelative:cleanarchwithcqrsandmediatr.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA12530-08D9-435F-A8A7-601CAFADEAFE}|CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.domain\\cleanarchwithcqrsandmediatr.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CAA12530-08D9-435F-A8A7-601CAFADEAFE}|CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj|solutionrelative:cleanarchwithcqrsandmediatr.domain\\cleanarchwithcqrsandmediatr.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\blogvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\blogvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\commands\\createblog\\createblogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\commands\\createblog\\createblogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\getblogqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\getblogqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\commands\\createblog\\createblogcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\commands\\createblog\\createblogcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\getblogquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\getblogquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\commands\\createblog\\createblogcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\commands\\createblog\\createblogcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAA12530-08D9-435F-A8A7-601CAFADEAFE}|CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.domain\\repository\\iblogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAA12530-08D9-435F-A8A7-601CAFADEAFE}|CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj|solutionrelative:cleanarchwithcqrsandmediatr.domain\\repository\\iblogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyid\\getblogbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyid\\getblogbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.api\\controllers\\apicontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|solutionrelative:cleanarchwithcqrsandmediatr.api\\controllers\\apicontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.api\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|solutionrelative:cleanarchwithcqrsandmediatr.api\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\commands\\deleteblog\\deleteblogcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\commands\\deleteblog\\deleteblogcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\commands\\updateblog\\updateblogcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\commands\\updateblog\\updateblogcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.api\\cleanarchwithcqrsandmediatr.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{41A89E54-88AA-4721-9551-EEEC6B712F80}|CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj|solutionrelative:cleanarchwithcqrsandmediatr.api\\cleanarchwithcqrsandmediatr.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CAA12530-08D9-435F-A8A7-601CAFADEAFE}|CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.domain\\entity\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,34 +157,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\commands\\updateblog\\updateblogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\commands\\updateblog\\updateblogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyid\\getblogbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyid\\getblogbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAA12530-08D9-435F-A8A7-601CAFADEAFE}|CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.domain\\cleanarchwithcqrsandmediatr.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{CAA12530-08D9-435F-A8A7-601CAFADEAFE}|CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj|solutionrelative:cleanarchwithcqrsandmediatr.domain\\cleanarchwithcqrsandmediatr.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\common\\mappings\\imapfrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\common\\mappings\\imapfrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\blogvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogs\\blogvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\common\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\common\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\cleanarchwithcqrsandmediatr.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\cleanarchwithcqrsandmediatr.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyid\\getblogbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|solutionrelative:cleanarchwithcqrsandmediatr.application\\blogs\\queries\\getblogsbyid\\getblogbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E9B3808-69E3-4534-870A-1BC24AB10572}|CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj|c:\\users\\shraddhashenoy\\blog application\\cleanarchwithcqrsandmediatr\\cleanarchwithcqrsandmediatr.application\\blogs\\commands\\deleteblog\\deleteblogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -122,60 +178,414 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SqlConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Data\\SqlConnectionFactory.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\Data\\SqlConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Data\\SqlConnectionFactory.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\Data\\SqlConnectionFactory.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T06:22:37.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ISqlConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Interfaces\\ISqlConnectionFactory.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Common\\Interfaces\\ISqlConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Interfaces\\ISqlConnectionFactory.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Common\\Interfaces\\ISqlConnectionFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T05:18:54.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IBlogReadRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Interfaces\\IBlogReadRepository.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Common\\Interfaces\\IBlogReadRepository.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Interfaces\\IBlogReadRepository.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Common\\Interfaces\\IBlogReadRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T06:54:55.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "GetBlogsDapperQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsDapper\\GetBlogsDapperQueryHandler.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsDapper\\GetBlogsDapperQueryHandler.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsDapper\\GetBlogsDapperQueryHandler.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsDapper\\GetBlogsDapperQueryHandler.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T08:43:29.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BlogController.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Controllers\\BlogController.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.API\\Controllers\\BlogController.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Controllers\\BlogController.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.API\\Controllers\\BlogController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAuwBoAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T11:52:29.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BlogReadRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogReadRepository.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogReadRepository.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogReadRepository.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogReadRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwBwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T06:56:09.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BlogRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogRepository.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogRepository.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogRepository.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T11:33:01.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetBlogQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQueryHandler.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQueryHandler.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQueryHandler.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQueryHandler.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wCEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T09:11:43.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetBlogByIdDapperQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsByIdDapper\\GetBlogByIdDapperQueryHandler.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsByIdDapper\\GetBlogByIdDapperQueryHandler.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsByIdDapper\\GetBlogByIdDapperQueryHandler.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsByIdDapper\\GetBlogByIdDapperQueryHandler.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T04:58:53.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetBlogsDapperQuery.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsDapper\\GetBlogsDapperQuery.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsDapper\\GetBlogsDapperQuery.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsDapper\\GetBlogsDapperQuery.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsDapper\\GetBlogsDapperQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T08:42:39.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetBlogByIdDapperQuery.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsByIdDapper\\GetBlogByIdDapperQuery.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsByIdDapper\\GetBlogByIdDapperQuery.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsByIdDapper\\GetBlogByIdDapperQuery.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsByIdDapper\\GetBlogByIdDapperQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T04:57:10.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetBlogQuery.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQuery.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQuery.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQuery.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T09:09:21.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\appsettings.json",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.API\\appsettings.json",
               "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\appsettings.json",
               "RelativeToolTip": "CleanArchWithCQRSandMediatR.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-19T11:58:21.395Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "ConfigureServices.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\ConfigureServices.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\ConfigureServices.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\ConfigureServices.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\ConfigureServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\ConfigureServices.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\ConfigureServices.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\ConfigureServices.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\ConfigureServices.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowB0AAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T06:36:40.112Z"
+              "WhenOpened": "2026-02-19T07:06:28.319Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BlogDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Data\\BlogDbContext.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\Data\\BlogDbContext.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Data\\BlogDbContext.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\Data\\BlogDbContext.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAgwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T11:29:09.696Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "CleanArchWithCQRSandMediatR.Infrastructure.csproj",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj",
               "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj",
               "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\CleanArchWithCQRSandMediatR.Infrastructure.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABlAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-19T07:18:16.958Z"
+              "WhenOpened": "2026-02-19T07:18:16.958Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 15,
+              "Title": "BlogDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Data\\BlogDbContext.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\Data\\BlogDbContext.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Data\\BlogDbContext.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\Data\\BlogDbContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T11:29:09.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CleanArchWithCQRSandMediatR.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj*",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-19T13:15:15.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BlogDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Migrations\\BlogDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\Migrations\\BlogDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Migrations\\BlogDbContextModelSnapshot.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\Migrations\\BlogDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T06:58:52.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GetBlogByIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQueryHandler.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQueryHandler.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQueryHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T10:11:58.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IBlogRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Domain\\Repository\\IBlogRepository.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Domain\\Repository\\IBlogRepository.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Domain\\Repository\\IBlogRepository.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Domain\\Repository\\IBlogRepository.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAqwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T09:02:31.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ConfigureServices.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\ConfigureServices.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\ConfigureServices.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\ConfigureServices.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\ConfigureServices.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T06:36:40.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\MappingProfile.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T09:21:27.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IMapFrom.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\IMapFrom.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\IMapFrom.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\IMapFrom.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\IMapFrom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T09:19:55.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ValidationBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Behaviors\\ValidationBehaviour.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Common\\Behaviors\\ValidationBehaviour.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Behaviors\\ValidationBehaviour.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Common\\Behaviors\\ValidationBehaviour.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T04:07:56.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Program.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.API\\Program.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Program.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T06:27:10.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CleanArchWithCQRSandMediatR.Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-19T06:50:28.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BlogVm.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\BlogVm.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\BlogVm.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\BlogVm.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\BlogVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T09:08:24.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CreateBlogCommand.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommand.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommand.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommand.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T10:19:30.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CreateBlogCommandValidator.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandValidator.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandValidator.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandValidator.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandValidator.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T04:21:15.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CreateBlogCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandHandler.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandHandler.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandHandler.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T10:21:53.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "GetBlogByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQuery.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQuery.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQuery.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQuery.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T10:10:10.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
               "Title": "ApiControllerBase.cs",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Controllers\\ApiControllerBase.cs",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.API\\Controllers\\ApiControllerBase.cs",
@@ -188,44 +598,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BlogController.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Controllers\\BlogController.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.API\\Controllers\\BlogController.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Controllers\\BlogController.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.API\\Controllers\\BlogController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAwwD8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 32,
+              "Title": "ExceptionHandlingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.API\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.API\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T11:52:29.275Z",
+              "WhenOpened": "2026-03-03T04:45:29.038Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Program.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.API\\Program.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Program.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 33,
+              "Title": "DeleteBlogCommandValidator.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommandValidator.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommandValidator.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommandValidator.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommandValidator.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T06:27:10.985Z"
+              "WhenOpened": "2026-03-03T04:39:15.879Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ConfigureServices.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\ConfigureServices.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\ConfigureServices.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\ConfigureServices.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\ConfigureServices.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAowBwAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 34,
+              "Title": "UpdateBlogCommandValidator.cs",
+              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommandValidator.cs",
+              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommandValidator.cs",
+              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommandValidator.cs",
+              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommandValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T07:06:28.319Z"
+              "WhenOpened": "2026-03-03T04:36:48.697Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 35,
               "Title": "CleanArchWithCQRSandMediatR.API.csproj",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj",
@@ -233,83 +645,12 @@
               "RelativeToolTip": "CleanArchWithCQRSandMediatR.API\\CleanArchWithCQRSandMediatR.API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-19T11:51:43.677Z"
+              "WhenOpened": "2026-02-19T11:51:43.677Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BlogRepository.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogRepository.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogRepository.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogRepository.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Infrastructure\\Repository\\BlogRepository.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAA5wDAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T11:33:01.201Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CreateBlogCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandHandler.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandHandler.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandHandler.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommandHandler.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAowBQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T10:21:53.112Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CreateBlogCommand.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommand.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommand.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommand.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\CreateBlog\\CreateBlogCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T10:19:30.408Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GetBlogQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQueryHandler.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQueryHandler.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQueryHandler.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQueryHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T09:11:43.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GetBlogQuery.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQuery.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQuery.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQuery.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\GetBlogQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T09:09:21.736Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IBlogRepository.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Domain\\Repository\\IBlogRepository.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Domain\\Repository\\IBlogRepository.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Domain\\Repository\\IBlogRepository.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Domain\\Repository\\IBlogRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAqwBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T09:02:31.482Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 36,
               "Title": "Blog.cs",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Domain\\Entity\\Blog.cs",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Domain\\Entity\\Blog.cs",
@@ -317,11 +658,12 @@
               "RelativeToolTip": "CleanArchWithCQRSandMediatR.Domain\\Entity\\Blog.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T09:01:21.598Z"
+              "WhenOpened": "2026-02-19T09:01:21.598Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 37,
               "Title": "UpdateBlogCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommandHandler.cs",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommandHandler.cs",
@@ -329,11 +671,12 @@
               "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommandHandler.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwB4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T10:48:44.897Z"
+              "WhenOpened": "2026-02-19T10:48:44.897Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 38,
               "Title": "UpdateBlogCommand.cs",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommand.cs",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommand.cs",
@@ -341,95 +684,12 @@
               "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\UpdateBlog\\UpdateBlogCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T10:47:31.588Z"
+              "WhenOpened": "2026-02-19T10:47:31.588Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "GetBlogByIdQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQueryHandler.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQueryHandler.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQueryHandler.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T10:11:58.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "CleanArchWithCQRSandMediatR.Domain.csproj",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Domain\\CleanArchWithCQRSandMediatR.Domain.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-19T06:50:28.574Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IMapFrom.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\IMapFrom.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\IMapFrom.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\IMapFrom.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\IMapFrom.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T09:19:55.385Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BlogVm.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\BlogVm.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\BlogVm.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\BlogVm.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogs\\BlogVm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T09:08:24.474Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\MappingProfile.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Common\\Mappings\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T09:21:27.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "CleanArchWithCQRSandMediatR.Application.csproj",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\CleanArchWithCQRSandMediatR.Application.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-19T13:15:15.822Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "GetBlogByIdQuery.cs",
-              "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQuery.cs",
-              "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQuery.cs",
-              "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQuery.cs",
-              "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Queries\\GetBlogsById\\GetBlogByIdQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T10:10:10.619Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 39,
               "Title": "DeleteBlogCommand.cs",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommand.cs",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommand.cs",
@@ -437,23 +697,25 @@
               "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T10:53:42.912Z"
+              "WhenOpened": "2026-02-19T10:53:42.912Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 40,
               "Title": "DeleteBlogCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommandHandler.cs",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommandHandler.cs",
               "ToolTip": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommandHandler.cs",
               "RelativeToolTip": "CleanArchWithCQRSandMediatR.Application\\Blogs\\Commands\\DeleteBlog\\DeleteBlogCommandHandler.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBQAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T11:11:28.868Z"
+              "WhenOpened": "2026-02-19T11:11:28.868Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 41,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\ShraddhaShenoy\\Blog application\\CleanArchWithCQRSandMediatR\\CleanArchWithCQRSandMediatR.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "CleanArchWithCQRSandMediatR.API\\Properties\\launchSettings.json",
@@ -461,7 +723,8 @@
               "RelativeToolTip": "CleanArchWithCQRSandMediatR.API\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-19T12:02:06.958Z"
+              "WhenOpened": "2026-02-19T12:02:06.958Z",
+              "EditorCaption": ""
             }
           ]
         }
