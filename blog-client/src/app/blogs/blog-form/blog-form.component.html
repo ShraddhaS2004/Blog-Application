@@ -15,7 +15,7 @@
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
             <input matInput [(ngModel)]="blog.name" name="name" required (ngModelChange)="onInputChange()">
-            <mat-error *ngIf="blogForm.submitted && !blog.name">Name is required.</mat-error>
+            <mat-error *ngIf="!blog.name">Name is required.</mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -25,13 +25,13 @@
               name="description"
               required (ngModelChange)="onInputChange()">
             </textarea>
-            <mat-error *ngIf="blogForm.submitted && !blog.description">Description is required.</mat-error>
+            <mat-error *ngIf="!blog.description">Description is required.</mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
             <mat-label>Author</mat-label>
             <input matInput [(ngModel)]="blog.author" name="author" required (ngModelChange)="onInputChange()">
-            <mat-error *ngIf="blogForm.submitted && !blog.author">Author is required.</mat-error>
+            <mat-error *ngIf="!blog.author">Author is required.</mat-error>
           </mat-form-field>
 
         </div>

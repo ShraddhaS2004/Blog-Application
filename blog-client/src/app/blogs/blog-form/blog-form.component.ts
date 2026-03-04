@@ -15,7 +15,7 @@ import { CanDeactivate } from '@angular/router';
   templateUrl: './blog-form.component.html',
   styleUrls: ['./blog-form.component.css']
 })
-export class BlogFormComponent implements OnInit, CanDeactivate<BlogFormComponent> {
+export class BlogFormComponent implements OnInit {
 
   blog: Blog = {
     name: '',
@@ -47,22 +47,23 @@ export class BlogFormComponent implements OnInit, CanDeactivate<BlogFormComponen
   }
 
   // CanDeactivate Guard logic to warn the user about unsaved changes
-  canDeactivate(): boolean {
-    if (this.formChanged) {
-      return confirm('You have unsaved changes. Do you want to save them?');
-    }
-    return true;
-  }
+  // canDeactivate(): boolean {
+  //   if (this.formChanged) {
+  //     return confirm('You have unsaved changes. Do you want to save them?');
+  //   }
+  //   return true;
+  // }
 
   onCancel() {
-    if (this.formChanged && !this.isNewBlog) {
-      const confirmCancel = confirm('You have unsaved changes. Do you want to discard them?');
-      if (confirmCancel) {
-        this.router.navigate(['/']);
-      }
-    } else {
-      this.router.navigate(['/']);
-    }
+    //if (this.formChanged && !this.isNewBlog) {
+    //   const confirmCancel = confirm('You have unsaved changes. Do you want to discard them?');
+    //   if (confirmCancel) {
+    //     this.router.navigate(['/']);
+    //   }
+    // } else {
+    //   this.router.navigate(['/']);
+    // }
+    this.router.navigate(['/']);
   }
 
   onSubmit() {
