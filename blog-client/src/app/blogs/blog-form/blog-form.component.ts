@@ -6,7 +6,6 @@ import { BlogService } from '../../services/blog.service';
 import { Blog } from '../../models/blog';
 import { MaterialModule } from '../../material/material.module';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CanDeactivate } from '@angular/router';
 
 @Component({
   selector: 'app-blog-form',
