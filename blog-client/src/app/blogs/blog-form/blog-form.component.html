@@ -8,30 +8,32 @@
 
     <mat-card-content>
 
-      <form (ngSubmit)="onSubmit()" #blogForm="ngForm">
+      <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
 
         <div class="form-fields">
 
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="blog.name" name="name" required (ngModelChange)="onInputChange()">
-            <mat-error *ngIf="!blog.name">Name is required.</mat-error>
+            <input matInput formControlName="name">
+            <mat-error *ngIf="blogForm.get('name')?.hasError('required')">
+              Name is required
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
-            <textarea matInput rows="4"
-              [(ngModel)]="blog.description"
-              name="description"
-              required (ngModelChange)="onInputChange()">
-            </textarea>
-            <mat-error *ngIf="!blog.description">Description is required.</mat-error>
+            <textarea matInput rows="4" formControlName="description"></textarea>
+            <mat-error *ngIf="blogForm.get('description')?.hasError('required')">
+              Description is required
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
             <mat-label>Author</mat-label>
-            <input matInput [(ngModel)]="blog.author" name="author" required (ngModelChange)="onInputChange()">
-            <mat-error *ngIf="!blog.author">Author is required.</mat-error>
+            <input matInput formControlName="author">
+            <mat-error *ngIf="blogForm.get('author')?.hasError('required')">
+              Author is required
+            </mat-error>
           </mat-form-field>
 
         </div>
@@ -40,7 +42,8 @@
           <button mat-stroked-button color="accent" type="button" (click)="onCancel()">
             Cancel
           </button>
-          <button mat-raised-button color="primary" type="submit" [disabled]="!blogForm.form.valid">
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="blogForm.invalid">
             {{ isEditMode ? 'Update' : 'Save' }}
           </button>
         </div>

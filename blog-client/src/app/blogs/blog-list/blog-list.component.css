@@ -1,5 +1,8 @@
 .list-container {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .spacer {
@@ -12,19 +15,57 @@
   margin: 2rem 0;
 }
 
+.error-message {
+  color: red;
+  text-align: center;
+  margin: 1.5rem 0;
+  font-weight: 500;
+}
+
 .empty-state {
   text-align: center;
   margin: 3rem 0;
   color: gray;
+  font-size: 1.2rem;
 }
 
 .blogs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .blog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
+}
+
+.blog-card mat-card-header {
+  padding-top: 35px; /* adjust based on checkbox size */
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .blogs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Checkbox positioning */
+.blog-card mat-checkbox {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+}
+.blog-card {
+  position: relative;
 }

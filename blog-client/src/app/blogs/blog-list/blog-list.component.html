@@ -1,49 +1,86 @@
 <div class="list-container">
 
+  <!-- Toolbar with Create button -->
   <mat-toolbar>
     <span>Blogs</span>
     <span class="spacer"></span>
-    <button mat-raised-button color="primary" (click)="create()">
+
+    <button mat-raised-button color="primary" (click)="toggleSelectMode()">
+      <mat-icon>{{ selectMode ? 'close' : 'check_box' }}</mat-icon>
+      {{ selectMode ? 'Cancel' : 'Select' }}
+    </button>
+
+    <button mat-raised-button color="primary" style="margin-left: 1rem;"(click)="create()">
       <mat-icon>add</mat-icon>
       Create Blog
     </button>
+
+    <button mat-raised-button color="warn" style="margin-left: 1rem;" (click)="deleteSelected()" *ngIf="selectMode && selectedBlogs.size > 0">
+      <mat-icon>delete</mat-icon>
+      Delete Selected ({{ selectedBlogs.size }})
+    </button>
+
   </mat-toolbar>
 
   <!-- Loading Spinner -->
   <div *ngIf="loading" class="center">
-    <mat-spinner diameter="40"></mat-spinner>
+    <mat-spinner diameter="50"></mat-spinner>
   </div>
 
-  <!-- Empty State -->
-  <div *ngIf="!loading && blogs.length === 0" class="empty-state">
-    No blogs found. Create your first blog!
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
   </div>
 
-  <div class="blogs-grid">
-    <mat-card *ngFor="let blog of blogs" class="blog-card">
+  <!-- Blogs List -->
+  <ng-container *ngIf="blogs$ | async as blogs">
+    
+    <!-- Empty State -->
+    <div *ngIf="!loading && blogs.length === 0" class="empty-state">
+      No blogs found. Create your first blog!
+    </div>
 
-      <mat-card-header>
-        <mat-card-title>{{ blog.name }}</mat-card-title>
-        <mat-card-subtitle>By {{ blog.author }}</mat-card-subtitle>
-      </mat-card-header>
+    <!-- Blogs Grid -->
+    <div class="blogs-grid" *ngIf="blogs.length > 0">
+      <mat-card *ngFor="let blog of paginatedBlogs$ | async" class="blog-card">
 
-      <mat-card-content>
-        <p>{{ blog.description }}</p>
-      </mat-card-content>
+        <!-- Checkbox in select mode -->
+        <mat-checkbox *ngIf="selectMode"
+              [checked]="isSelected(blog.id!)"
+              (change)="toggleBlogSelection(blog.id!)">
+        </mat-checkbox>
 
-      <mat-card-actions align="end">
-        <button mat-button color="primary" (click)="edit(blog.id!)">
-          <mat-icon>edit</mat-icon>
-          Edit
-        </button>
+        <mat-card-header>
+          <mat-card-title>{{ blog.name }}</mat-card-title>
+          <mat-card-subtitle>By {{ blog.author }}</mat-card-subtitle>
+        </mat-card-header>
 
-        <button mat-button color="warn" (click)="delete(blog.id!)">
-          <mat-icon>delete</mat-icon>
-          Delete
-        </button>
-      </mat-card-actions>
+        <mat-card-content>
+          <p>{{ blog.description }}</p>
+        </mat-card-content>
 
-    </mat-card>
-  </div>
+        <mat-card-actions align="end">
+          <button mat-stroked-button color="primary" (click)="edit(blog.id!)">
+            <mat-icon>edit</mat-icon>
+            Edit
+          </button>
+
+          <button mat-stroked-button color="warn" (click)="delete(blog.id!)">
+            <mat-icon>delete</mat-icon>
+            Delete
+          </button>
+        </mat-card-actions>
+
+      </mat-card>
+    </div>
+
+    <mat-paginator
+  [length]="(blogs$ | async)?.length || 0"
+  [pageSize]="6"
+  [pageSizeOptions]="[6]"
+  (page)="onPageChange($event)">
+</mat-paginator>
+
+  </ng-container>
 
 </div>

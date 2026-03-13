@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { Blog } from '../../models/blog';
@@ -10,87 +10,151 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-blog-form',
   standalone: true,
-  imports: [CommonModule, FormsModule, MaterialModule],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule],
   templateUrl: './blog-form.component.html',
   styleUrls: ['./blog-form.component.css']
 })
 export class BlogFormComponent implements OnInit {
 
-  blog: Blog = {
-    name: '',
-    description: '',
-    author: ''
-  };
+  blogForm!: FormGroup;
 
   isEditMode = false;
-  formChanged = false;
-  isNewBlog=false;
+  isNewBlog = false;
+
+  initialFormValue: any;
+
+  blogId!: number;
 
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
+
+    this.blogForm = this.fb.group({
+      id: [null],
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      author: ['', Validators.required]
+    });
+
     const id = this.route.snapshot.paramMap.get('id');
-    this.isNewBlog=!id;
+    this.isNewBlog = !id;
 
     if (id) {
       this.isEditMode = true;
-      this.blogService.getById(+id).subscribe(data => {
-        this.blog = data;
+      this.blogId = +id;
+
+      this.blogService.getById(this.blogId).subscribe(data => {
+
+        this.blogForm.patchValue({
+          id: data.id,
+          name: data.name,
+          description: data.description,
+          author: data.author
+        });
+
+        // store initial value
+        this.initialFormValue = this.blogForm.getRawValue();
       });
+
+    } else {
+      this.initialFormValue = this.blogForm.getRawValue();
     }
   }
 
-  // CanDeactivate Guard logic to warn the user about unsaved changes
-  // canDeactivate(): boolean {
-  //   if (this.formChanged) {
-  //     return confirm('You have unsaved changes. Do you want to save them?');
-  //   }
-  //   return true;
-  // }
+  hasFormChanged(): boolean {
+const normalize = (obj: any) => {
+    const result: any = {};
+    Object.keys(obj).forEach(key => {
+      const value = obj[key];
+      if (typeof value === 'string') {
+        result[key] = value.trim();
+      } else {
+        result[key] = value;
+      }
+    });
+    return result;
+  };
 
+  const initial = normalize(this.initialFormValue);
+  const current = normalize(this.blogForm.getRawValue());
+
+  return JSON.stringify(initial) !== JSON.stringify(current);
+  }
+
+  /**
+   * Cancel button
+   */
   onCancel() {
-    //if (this.formChanged && !this.isNewBlog) {
-    //   const confirmCancel = confirm('You have unsaved changes. Do you want to discard them?');
-    //   if (confirmCancel) {
-    //     this.router.navigate(['/']);
+
+    // if (this.hasFormChanged()) {
+
+    //   const confirmDiscard = confirm(
+    //     'You have unsaved changes. Do you want to discard them?'
+    //   );
+
+    //   if (!confirmDiscard) {
+    //     return;
     //   }
-    // } else {
-    //   this.router.navigate(['/']);
     // }
+
     this.router.navigate(['/']);
   }
 
+  /**
+   * Submit form
+   */
   onSubmit() {
+
+    if (!this.hasFormChanged()) {
+
+      this.snackBar.open('No changes detected!', 'Close', {
+        duration: 2000
+      });
+
+      setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 500);
+
+      return;
+    }
+
+    const formValue = this.blogForm.getRawValue();
+
     if (this.isEditMode) {
-      this.blogService.update(this.blog.id!, this.blog).subscribe(() => {
-        this.formChanged = false;
+
+      //const id = this.route.snapshot.paramMap.get('id');
+
+      this.blogService.update(formValue.id, formValue).subscribe(() => {
+
         this.snackBar.open('Blog updated successfully!', 'Close', {
           duration: 3000,
           panelClass: ['success-snackbar'],
         });
+
+        this.initialFormValue = this.blogForm.getRawValue();
+
         this.router.navigate(['/']);
       });
+
     } else {
-      this.blogService.create(this.blog).subscribe(() => {
-        this.formChanged = false;
+
+      this.blogService.create(formValue).subscribe(() => {
+
         this.snackBar.open('Blog saved successfully!', 'Close', {
           duration: 3000,
           panelClass: ['success-snackbar'],
         });
+
+        this.initialFormValue = this.blogForm.getRawValue();
+
         this.router.navigate(['/']);
       });
-    }
-  }
-
-  // Track changes in the form to set formChanged to true
-  onInputChange() {
-    if (this.isEditMode) {
-      this.formChanged = true;
     }
   }
 }

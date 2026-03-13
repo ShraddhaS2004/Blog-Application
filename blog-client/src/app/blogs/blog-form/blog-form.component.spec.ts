@@ -1,38 +1,44 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BlogFormComponent } from './blog-form.component';
 import { BlogService } from '../../services/blog.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { of } from 'rxjs';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../material/material.module';
+import { Blog } from '../../models/blog';
 
 describe('BlogFormComponent', () => {
   let component: BlogFormComponent;
   let fixture: ComponentFixture<BlogFormComponent>;
-  let blogServiceSpy: any;
-  let routerSpy: any;
-  let snackBarSpy: any;
+  let blogServiceSpy: jasmine.SpyObj<BlogService>;
+  let routerSpy: jasmine.SpyObj<Router>;
+  let snackBarSpy: jasmine.SpyObj<MatSnackBar>;
+
+  const mockBlog: Blog = {
+  id: 1,
+  name: 'Test Blog',
+  description: 'Test Description',
+  author: 'Tester'
+  };
 
   beforeEach(async () => {
-    // Spies using vi.fn()
-    blogServiceSpy = {
-      getById: vi.fn(),
-      create: vi.fn(),
-      update: vi.fn(),
-    };
 
-    routerSpy = {
-      navigate: vi.fn(),
-    };
+    blogServiceSpy = jasmine.createSpyObj('BlogService', [
+      'getById',
+      'create',
+      'update'
+    ]);
 
-    snackBarSpy = {
-      open: vi.fn(),
-    };
+    routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+    snackBarSpy = jasmine.createSpyObj('MatSnackBar', ['open']);
 
     await TestBed.configureTestingModule({
-      imports: [FormsModule, MaterialModule, BlogFormComponent],
+      imports: [
+        ReactiveFormsModule,
+        MaterialModule,
+        BlogFormComponent
+      ],
       providers: [
         { provide: BlogService, useValue: blogServiceSpy },
         { provide: Router, useValue: routerSpy },
@@ -42,12 +48,12 @@ describe('BlogFormComponent', () => {
           useValue: {
             snapshot: {
               paramMap: {
-                get: vi.fn(() => null), // null = create mode
-              },
-            },
-          },
-        },
-      ],
+                get: jasmine.createSpy('get').and.returnValue(null) // Create mode
+              }
+            }
+          }
+        }
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BlogFormComponent);
@@ -55,32 +61,43 @@ describe('BlogFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create component', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 
   it('should initialize in create mode when no id param', () => {
-    expect(component.isEditMode).toBe(false);
-    expect(component.isNewBlog).toBe(true);
+    expect(component.isEditMode).toBeFalse();
+    expect(component.isNewBlog).toBeTrue();
   });
 
   it('should call create blog on submit in create mode', () => {
-    component.blog = {
+
+    component.blogForm.patchValue({
       name: 'Test Blog',
       description: 'Test Description',
-      author: 'Tester',
+      author: 'Tester'
+    });
+
+    component.initialFormValue = {
+      name: '',
+      description: '',
+      author: ''
     };
 
-    blogServiceSpy.create.mockReturnValue(of(component.blog));
+    blogServiceSpy.create.and.returnValue(of(mockBlog));
 
     component.onSubmit();
 
-    expect(blogServiceSpy.create).toHaveBeenCalledWith(component.blog);
+    expect(blogServiceSpy.create).toHaveBeenCalledWith(
+      component.blogForm.getRawValue()
+    );
+
     expect(snackBarSpy.open).toHaveBeenCalledWith(
       'Blog saved successfully!',
       'Close',
-      expect.any(Object)
+      jasmine.any(Object)
     );
+
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/']);
   });
 
@@ -89,12 +106,76 @@ describe('BlogFormComponent', () => {
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/']);
   });
 
-  it('should set formChanged true on input change in edit mode', () => {
-    component.isEditMode = true;
-    component.formChanged = false;
+  it('should detect form changes correctly', () => {
 
-    component.onInputChange();
+    component.initialFormValue = {
+      name: 'Old',
+      description: 'Old desc',
+      author: 'Old author'
+    };
 
-    expect(component.formChanged).toBe(true);
+    component.blogForm.patchValue({
+      name: 'New',
+      description: 'Old desc',
+      author: 'Old author'
+    });
+
+    expect(component.hasFormChanged()).toBeTrue();
   });
+
+  it('should not detect change when form values are same', () => {
+
+    component.initialFormValue = {
+      id: null,
+      name: 'Same',
+      description: 'Same desc',
+      author: 'Same author'
+    };
+
+    component.blogForm.patchValue({
+      name: 'Same',
+      description: 'Same desc',
+      author: 'Same author'
+    });
+
+    expect(component.hasFormChanged()).toBeFalse();
+  });
+
+  it('should call update blog on submit in edit mode', () => {
+
+    component.isEditMode = true;
+    component.blogId = 1;
+
+    component.blogForm.patchValue({
+      id: 1,
+      name: 'Updated Blog',
+      description: 'Updated Description',
+      author: 'Tester'
+    });
+
+    component.initialFormValue = {
+      id:1,
+      name: 'Old Blog',
+      description: 'Old Description',
+      author: 'Tester'
+    };
+
+    blogServiceSpy.update.and.returnValue(of(void(0)));
+
+    component.onSubmit();
+
+    expect(blogServiceSpy.update).toHaveBeenCalledWith(
+      1,
+      component.blogForm.getRawValue()
+    );
+
+    expect(snackBarSpy.open).toHaveBeenCalledWith(
+      'Blog updated successfully!',
+      'Close',
+      jasmine.any(Object)
+    );
+
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['/']);
+  });
+
 });

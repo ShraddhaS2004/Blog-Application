@@ -8,7 +8,7 @@ import { BlogFormComponent } from '../blogs/blog-form/blog-form.component';
 export class CanDeactivateGuard implements CanDeactivate<BlogFormComponent> {
 
   canDeactivate(component: BlogFormComponent): boolean {
-    if (component.formChanged) {
+    if (component.hasFormChanged()) {
       return confirm('You have unsaved changes. Do you want to discard them?');
     }
     return true;

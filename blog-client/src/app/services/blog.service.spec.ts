@@ -1,4 +1,3 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { BlogService } from './blog.service';
@@ -24,7 +23,7 @@ describe('BlogService', () => {
   });
 
   afterEach(() => {
-    httpMock.verify();
+    httpMock.verify(); // make sure no outstanding requests
   });
 
   it('should be created', () => {
@@ -32,7 +31,7 @@ describe('BlogService', () => {
   });
 
   it('should fetch all blogs', () => {
-    service.getAll().subscribe((blogs) => {
+    service.loadAll().subscribe((blogs) => {
       expect(blogs).toEqual(mockBlogs);
       expect(blogs.length).toBe(2);
     });

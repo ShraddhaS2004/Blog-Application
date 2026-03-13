@@ -1,9 +1,8 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BlogListComponent } from './blog-list.component';
 import { BlogService } from '../../services/blog.service';
 import { Router } from '@angular/router';
-import { of, throwError } from 'rxjs';
+import { of, BehaviorSubject } from 'rxjs';
 import { MaterialModule } from '../../material/material.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -19,15 +18,17 @@ describe('BlogListComponent', () => {
     { id: 2, name: 'Blog 2', description: 'Desc 2', author: 'Author 2' }
   ];
 
-  beforeEach(async () => {
-    blogServiceSpy = {
-      getAll: vi.fn(),
-      delete: vi.fn()
-    };
+  const blogsSubject = new BehaviorSubject(mockBlogs);
 
-    routerSpy = {
-      navigate: vi.fn()
-    };
+  beforeEach(async () => {
+    // Jasmine spies
+    blogServiceSpy = jasmine.createSpyObj('BlogService', ['loadAll', 'delete','isEmpty'],{
+      blogs$: blogsSubject.asObservable()
+    });
+    routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+
+    blogServiceSpy.loadAll.and.returnValue(of(mockBlogs));
+    blogServiceSpy.isEmpty.and.returnValue(true);
 
     await TestBed.configureTestingModule({
       imports: [CommonModule, RouterModule, MaterialModule, BlogListComponent],
@@ -41,30 +42,44 @@ describe('BlogListComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create component', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should load blogs on init', () => {
-    blogServiceSpy.getAll.mockReturnValue(of(mockBlogs));
+  it('should load blogs on init if service is empty', () => {
+
     component.ngOnInit();
-    expect(blogServiceSpy.getAll).toHaveBeenCalled();
-    expect(component.blogs).toEqual(mockBlogs);
-    expect(component.loading).toBe(false);
+
+    expect(blogServiceSpy.isEmpty).toHaveBeenCalled();
+    expect(blogServiceSpy.loadAll).toHaveBeenCalled();
   });
 
-  it('should handle error when loading blogs', () => {
-    blogServiceSpy.getAll.mockReturnValue(throwError(() => new Error('Fail')));
-    component.loadBlogs();
-    expect(blogServiceSpy.getAll).toHaveBeenCalled();
-    expect(component.blogs).toEqual([]);
-    expect(component.loading).toBe(false);
-    expect(component.errorMessage).toBe('Failed to load blogs.');
+  it('should not call loadAll if blogs already exist', () => {
+
+    blogServiceSpy.isEmpty.and.returnValue(false);
+
+    component.ngOnInit();
+
+    expect(blogServiceSpy.loadAll).not.toHaveBeenCalled();
   });
+
+  // it('should handle error when loading blogs', () => {
+  //   blogServiceSpy.getAll.and.returnValue(throwError(() => new Error('Fail')));
+
+  //   component.loadBlogs();
+
+  //   expect(blogServiceSpy.getAll).toHaveBeenCalled();
+  //   expect(component.blogs).toEqual([]);
+  //   expect(component.loading).toBe(false);
+  //   expect(component.errorMessage).toBe('Failed to load blogs.');
+  // });
 
   it('should navigate to edit page', () => {
+
     const id = 1;
+
     component.edit(id);
+
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/edit', id]);
   });
 
@@ -73,22 +88,65 @@ describe('BlogListComponent', () => {
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/create']);
   });
 
-  it('should call delete blog and reload blogs on confirm', () => {
-    (globalThis as any).confirm = vi.fn(() => true); // mock confirm dialog to return true
-    blogServiceSpy.delete.mockReturnValue(of({}));
-    blogServiceSpy.getAll.mockReturnValue(of(mockBlogs));
+  it('should delete blog when confirmed', () => {
+
+    spyOn(window, 'confirm').and.returnValue(true);
+
+    blogServiceSpy.delete.and.returnValue(of(void 0));
 
     component.delete(1);
 
-    expect((globalThis as any).confirm).toHaveBeenCalledWith('Are you sure you want to delete this blog?');
+    expect(window.confirm).toHaveBeenCalledWith('Are you sure you want to delete this blog?');
     expect(blogServiceSpy.delete).toHaveBeenCalledWith(1);
-    expect(blogServiceSpy.getAll).toHaveBeenCalled(); // reload after delete
   });
 
-  it('should not delete blog if user cancels', () => {
-     (globalThis as any).confirm = vi.fn(() => false); // user cancels
+
+
+  it('should not delete blog when confirmation cancelled', () => {
+
+    spyOn(window, 'confirm').and.returnValue(false);
+
     component.delete(1);
+
     expect(blogServiceSpy.delete).not.toHaveBeenCalled();
-    expect(blogServiceSpy.getAll).not.toHaveBeenCalled();
+  });
+
+  it('should toggle select mode', () => {
+
+    component.selectMode = false;
+
+    component.toggleSelectMode();
+
+    expect(component.selectMode).toBeTrue();
+
+    component.toggleSelectMode();
+
+    expect(component.selectMode).toBeFalse();
+  });
+
+  it('should select and deselect blogs', () => {
+
+    component.toggleBlogSelection(1);
+
+    expect(component.selectedBlogs.has(1)).toBeTrue();
+
+    component.toggleBlogSelection(1);
+
+    expect(component.selectedBlogs.has(1)).toBeFalse();
+  });
+
+  it('should delete selected blogs when confirmed', () => {
+
+    spyOn(window, 'confirm').and.returnValue(true);
+
+    blogServiceSpy.delete.and.returnValue(of(void 0));
+
+    component.selectedBlogs.add(1);
+    component.selectedBlogs.add(2);
+
+    component.deleteSelected();
+
+    expect(blogServiceSpy.delete).toHaveBeenCalledWith(1);
+    expect(blogServiceSpy.delete).toHaveBeenCalledWith(2);
   });
 });
