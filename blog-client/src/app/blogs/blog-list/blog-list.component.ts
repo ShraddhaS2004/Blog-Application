@@ -6,6 +6,7 @@ import { BlogService } from '../../services/blog.service';
 import { Blog } from '../../models/blog';
 import { MaterialModule } from '../../material/material.module';
 import { Observable, BehaviorSubject, combineLatest, map } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-blog-list',
@@ -25,12 +26,15 @@ export class BlogListComponent implements OnInit {
   loading = false;
   errorMessage = '';
 
+  searchTerm: string = '';
+
   selectMode = false;             // tracks if selection mode is on
   selectedBlogs = new Set<number>(); // tracks selected blog IDs
 
   constructor(
     private blogService: BlogService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -58,6 +62,93 @@ export class BlogListComponent implements OnInit {
     });
   }
   }
+
+  searchBlogs(): void {
+  if (!this.searchTerm.trim()) {
+    // If empty, reload all blogs
+    this.loading = true;
+    this.blogService.loadAll().subscribe({
+      next: () => this.loading = false,
+      error: () => {
+        this.loading = false;
+        this.snackBar.open('Failed to load blogs.', 'Close', {
+          duration: 3000
+        });
+      }
+    });
+    return;
+  }
+
+  this.loading = true;
+  this.blogService.search(this.searchTerm).subscribe({
+    next: (blogs) => {
+      this.loading = false;
+      this.blogsSubjectUpdate(blogs);
+      this.pageIndex$.next(0); // reset paginator to first page
+    },
+    error: (error) => {
+      this.loading = false;
+      if (error.status === 404) {
+        this.snackBar.open(
+          "The blog you're looking for doesn't exist.",
+          'Close',
+          { duration: 3000 }
+        );
+      } else {
+        this.snackBar.open(
+          'Something went wrong while searching blogs.',
+          'Close',
+          { duration: 3000 }
+        );
+      }
+    }
+  });
+}
+
+// Helper to update local BehaviorSubject (same as BlogService internal)
+private blogsSubjectUpdate(blogs: Blog[]): void {
+  // Directly update BehaviorSubject in service
+  (this.blogService as any).blogsSubject.next(blogs);
+}
+
+onSearchInputChange(): void {
+  // If user deletes everything in the search box
+  if (!this.searchTerm.trim()) {
+    this.loading = true;
+
+    this.blogService.loadAll().subscribe({
+      next: () => {
+        this.loading = false;
+        this.pageIndex$.next(0);
+      },
+      error: () => {
+        this.loading = false;
+        this.snackBar.open('Failed to load blogs.', 'Close', {
+          duration: 3000
+        });
+      }
+    });
+  }
+}
+
+clearSearch(): void {
+  this.searchTerm = '';
+
+  this.loading = true;
+
+  this.blogService.loadAll().subscribe({
+    next: () => {
+      this.loading = false;
+      this.pageIndex$.next(0);
+    },
+    error: () => {
+      this.loading = false;
+      this.snackBar.open('Failed to load blogs.', 'Close', {
+        duration: 3000
+      });
+    }
+  });
+}
 
   onPageChange(event: any) {
     this.pageIndex$.next(event.pageIndex);

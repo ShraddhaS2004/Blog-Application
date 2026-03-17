@@ -9,8 +9,21 @@ namespace CleanArchWithCQRSandMediatR.Domain.Entities
     public class Blog
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Author { get; set; }
+        private string _name;
+        public string Name {
+            get => _name;
+            set => _name = value?.Trim() ?? string.Empty;
+        }
+        private string _description;
+        public string Description { 
+            get => _description;
+            set => _description = value?.Trim() ?? string.Empty;
+        }
+
+        public string _author;
+        public string Author { 
+            get => _author;
+            set => _author = value?.Trim() ?? string.Empty;
+        }
     }
 }

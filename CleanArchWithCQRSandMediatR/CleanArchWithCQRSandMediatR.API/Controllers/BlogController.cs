@@ -4,6 +4,7 @@ using CleanArchWithCQRSandMediatR.Application.Blogs.Commands.UpdateBlog;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogs;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsById;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsByIdDapper;
+using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsBySearchDapper;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsDapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -56,6 +57,32 @@ namespace CleanArchWithCQRSandMediatR.API.Controllers
                 });
             }
             return Ok(blog);
+        }
+
+        [HttpGet("search", Name = "SearchBlogsDapper")]
+        public async Task<IActionResult> SearchBlogsDapperAsync([FromQuery] string term)
+        {
+            if (string.IsNullOrWhiteSpace(term))
+            {
+                return BadRequest(new
+                {
+                    message = "Search term cannot be empty",
+                    statusCode = 400
+                });
+            }
+
+            var blogs = await Mediator.Send(new GetBlogSearchDapperQuery { SearchTerm = term });
+
+            if (blogs == null || !blogs.Any())
+            {
+                return NotFound(new
+                {
+                    message = "No blogs matched your search term.",
+                    statusCode = 404
+                });
+            }
+
+            return Ok(blogs);
         }
 
         [HttpPost]

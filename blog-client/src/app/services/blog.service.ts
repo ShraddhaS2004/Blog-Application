@@ -53,13 +53,13 @@ export class BlogService {
 
   // Load all blogs once
   loadAll(): Observable<Blog[]> {
-    return this.http.get<Blog[]>(`${this.apiUrl}/GetAll`).pipe(
+    return this.http.get<Blog[]>(`${this.apiUrl}/GetAllDapper`).pipe(
       tap(blogs => this.blogsSubject.next(blogs))
     );
   }
 
   getById(id: number): Observable<Blog> {
-    return this.http.get<Blog>(`${this.apiUrl}/GetById/${id}`);
+    return this.http.get<Blog>(`${this.apiUrl}/GetByIdDapper/${id}`);
   }
 
   create(blog: Blog): Observable<Blog> {
@@ -89,6 +89,15 @@ export class BlogService {
       })
     );
   }
+
+  // Add this method to BlogService
+search(term: string): Observable<Blog[]> {
+  return this.http.get<Blog[]>(`${this.apiUrl}/SearchBlogsDapper/search?term=${encodeURIComponent(term)}`).pipe(
+    tap(blogs => {
+      this.blogsSubject.next(blogs);
+    })
+  );
+}
 
   isEmpty(): boolean {
     return this.blogsSubject.value.length === 0;

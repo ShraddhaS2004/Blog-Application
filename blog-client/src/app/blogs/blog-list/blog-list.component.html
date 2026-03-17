@@ -22,6 +22,25 @@
 
   </mat-toolbar>
 
+  <!-- Search Input -->
+<div class="search-container" style="margin: 1rem 0;">
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Search Blogs</mat-label>
+    <input matInput [(ngModel)]="searchTerm" (keyup.enter)="searchBlogs()" (input)="onSearchInputChange()" placeholder="Enter blog name or description">
+    <button
+      *ngIf="searchTerm"
+      mat-icon-button
+      matSuffix
+      (click)="clearSearch()"
+      aria-label="Clear search">
+      <mat-icon>close</mat-icon>
+    </button>
+    <button mat-icon-button matSuffix (click)="searchBlogs()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
   <!-- Loading Spinner -->
   <div *ngIf="loading" class="center">
     <mat-spinner diameter="50"></mat-spinner>
@@ -39,6 +58,8 @@
     <div *ngIf="!loading && blogs.length === 0" class="empty-state">
       No blogs found. Create your first blog!
     </div>
+
+    
 
     <!-- Blogs Grid -->
     <div class="blogs-grid" *ngIf="blogs.length > 0">

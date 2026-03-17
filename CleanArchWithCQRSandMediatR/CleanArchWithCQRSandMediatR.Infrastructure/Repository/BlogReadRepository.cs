@@ -30,4 +30,17 @@ public class BlogReadRepository : IBlogReadRepository
 
         return blogs.ToList();
     }
+
+    public async Task<List<BlogVm>> SearchBlogsAsync(string searchTerm)
+    {
+        using var connection = _connectionFactory.CreateConnection();
+
+        var sql = @"SELECT * FROM Blogs 
+                WHERE Name LIKE @Search OR Description LIKE @Search";
+
+        // Wrap term with '%' for LIKE search
+        var blogs = await connection.QueryAsync<BlogVm>(sql, new { Search = $"%{searchTerm}%" });
+
+        return blogs.ToList();
+    }
 }

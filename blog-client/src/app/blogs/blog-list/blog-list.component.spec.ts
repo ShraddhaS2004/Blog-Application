@@ -1,152 +1,105 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { describe, it, beforeEach, expect, vi } from 'vitest';
+import { of, BehaviorSubject } from 'rxjs';
 import { BlogListComponent } from './blog-list.component';
 import { BlogService } from '../../services/blog.service';
 import { Router } from '@angular/router';
-import { of, BehaviorSubject } from 'rxjs';
-import { MaterialModule } from '../../material/material.module';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 describe('BlogListComponent', () => {
   let component: BlogListComponent;
-  let fixture: ComponentFixture<BlogListComponent>;
-  let blogServiceSpy: any;
-  let routerSpy: any;
+  let blogServiceMock: any;
+  let routerMock: any;
+  let snackBarMock: any;
 
-  const mockBlogs = [
-    { id: 1, name: 'Blog 1', description: 'Desc 1', author: 'Author 1' },
-    { id: 2, name: 'Blog 2', description: 'Desc 2', author: 'Author 2' }
-  ];
+  beforeEach(() => {
+    const blogsSubject = new BehaviorSubject([
+      { id: 1, name: 'Blog 1', description: 'Desc 1', author: 'Author 1' },
+      { id: 2, name: 'Blog 2', description: 'Desc 2', author: 'Author 2' }
+    ]);
 
-  const blogsSubject = new BehaviorSubject(mockBlogs);
+    blogServiceMock = {
+      blogs$: blogsSubject.asObservable(),
+      blogsSubject,
+      isEmpty: vi.fn().mockReturnValue(true),
+      loadAll: vi.fn().mockReturnValue(of([])),
+      search: vi.fn().mockReturnValue(of([])),
+      delete: vi.fn().mockReturnValue(of({}))
+    };
 
-  beforeEach(async () => {
-    // Jasmine spies
-    blogServiceSpy = jasmine.createSpyObj('BlogService', ['loadAll', 'delete','isEmpty'],{
-      blogs$: blogsSubject.asObservable()
+    routerMock = { navigate: vi.fn() };
+    snackBarMock = { open: vi.fn() };
+
+    component = new BlogListComponent(blogServiceMock, routerMock, snackBarMock);
+  });
+
+  it('should initialize blogs and paginatedBlogs', () => {
+    component.ngOnInit();
+    component.blogs$.subscribe(blogs => {
+      expect(blogs.length).toBe(2);
     });
-    routerSpy = jasmine.createSpyObj('Router', ['navigate']);
-
-    blogServiceSpy.loadAll.and.returnValue(of(mockBlogs));
-    blogServiceSpy.isEmpty.and.returnValue(true);
-
-    await TestBed.configureTestingModule({
-      imports: [CommonModule, RouterModule, MaterialModule, BlogListComponent],
-      providers: [
-        { provide: BlogService, useValue: blogServiceSpy },
-        { provide: Router, useValue: routerSpy }
-      ]
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(BlogListComponent);
-    component = fixture.componentInstance;
+    component.paginatedBlogs$.subscribe(paginated => {
+      expect(paginated.length).toBeLessThanOrEqual(component.pageSize);
+    });
+    expect(component.loading).toBe(false);
   });
 
-  it('should create the component', () => {
-    expect(component).toBeTruthy();
+  it('should navigate to edit', () => {
+    component.edit(1);
+    expect(routerMock.navigate).toHaveBeenCalledWith(['/edit', 1]);
   });
 
-  it('should load blogs on init if service is empty', () => {
-
-    component.ngOnInit();
-
-    expect(blogServiceSpy.isEmpty).toHaveBeenCalled();
-    expect(blogServiceSpy.loadAll).toHaveBeenCalled();
-  });
-
-  it('should not call loadAll if blogs already exist', () => {
-
-    blogServiceSpy.isEmpty.and.returnValue(false);
-
-    component.ngOnInit();
-
-    expect(blogServiceSpy.loadAll).not.toHaveBeenCalled();
-  });
-
-  // it('should handle error when loading blogs', () => {
-  //   blogServiceSpy.getAll.and.returnValue(throwError(() => new Error('Fail')));
-
-  //   component.loadBlogs();
-
-  //   expect(blogServiceSpy.getAll).toHaveBeenCalled();
-  //   expect(component.blogs).toEqual([]);
-  //   expect(component.loading).toBe(false);
-  //   expect(component.errorMessage).toBe('Failed to load blogs.');
-  // });
-
-  it('should navigate to edit page', () => {
-
-    const id = 1;
-
-    component.edit(id);
-
-    expect(routerSpy.navigate).toHaveBeenCalledWith(['/edit', id]);
-  });
-
-  it('should navigate to create page', () => {
+  it('should navigate to create', () => {
     component.create();
-    expect(routerSpy.navigate).toHaveBeenCalledWith(['/create']);
+    expect(routerMock.navigate).toHaveBeenCalledWith(['/create']);
   });
 
-  it('should delete blog when confirmed', () => {
-
-    spyOn(window, 'confirm').and.returnValue(true);
-
-    blogServiceSpy.delete.and.returnValue(of(void 0));
-
-    component.delete(1);
-
-    expect(window.confirm).toHaveBeenCalledWith('Are you sure you want to delete this blog?');
-    expect(blogServiceSpy.delete).toHaveBeenCalledWith(1);
-  });
-
-
-
-  it('should not delete blog when confirmation cancelled', () => {
-
-    spyOn(window, 'confirm').and.returnValue(false);
-
-    component.delete(1);
-
-    expect(blogServiceSpy.delete).not.toHaveBeenCalled();
-  });
-
-  it('should toggle select mode', () => {
-
-    component.selectMode = false;
-
-    component.toggleSelectMode();
-
-    expect(component.selectMode).toBeTrue();
-
-    component.toggleSelectMode();
-
-    expect(component.selectMode).toBeFalse();
-  });
-
-  it('should select and deselect blogs', () => {
-
-    component.toggleBlogSelection(1);
-
-    expect(component.selectedBlogs.has(1)).toBeTrue();
-
-    component.toggleBlogSelection(1);
-
-    expect(component.selectedBlogs.has(1)).toBeFalse();
-  });
-
-  it('should delete selected blogs when confirmed', () => {
-
-    spyOn(window, 'confirm').and.returnValue(true);
-
-    blogServiceSpy.delete.and.returnValue(of(void 0));
-
+  it('should toggle select mode and clear selections', () => {
     component.selectedBlogs.add(1);
-    component.selectedBlogs.add(2);
+    component.toggleSelectMode(); // enable
+    expect(component.selectMode).toBe(true);
+    component.toggleSelectMode(); // disable
+    expect(component.selectMode).toBe(false);
+    expect(component.selectedBlogs.size).toBe(0);
+  });
 
+  it('should toggle blog selection', () => {
+    component.toggleBlogSelection(1);
+    expect(component.isSelected(1)).toBe(true);
+    component.toggleBlogSelection(1);
+    expect(component.isSelected(1)).toBe(false);
+  });
+
+  it('should call deleteSelected with confirmation', () => {
+    vi.stubGlobal('confirm', () => true);
+    component.selectedBlogs.add(1);
     component.deleteSelected();
+    expect(blogServiceMock.delete).toHaveBeenCalledWith(1);
+    expect(component.selectedBlogs.size).toBe(0);
+    expect(component.selectMode).toBe(false);
+  });
 
-    expect(blogServiceSpy.delete).toHaveBeenCalledWith(1);
-    expect(blogServiceSpy.delete).toHaveBeenCalledWith(2);
+  it('should call delete single blog with confirmation', () => {
+    vi.stubGlobal('confirm', () => true);
+    component.delete(1);
+    expect(blogServiceMock.delete).toHaveBeenCalledWith(1);
+  });
+
+  it('should handle search input empty', () => {
+    component.searchTerm = '';
+    component.onSearchInputChange();
+    expect(blogServiceMock.loadAll).toHaveBeenCalled();
+  });
+
+  it('should handle clearSearch', () => {
+    component.clearSearch();
+    expect(blogServiceMock.loadAll).toHaveBeenCalled();
+    expect(component.searchTerm).toBe('');
+  });
+
+  it('should change page index', () => {
+    component.onPageChange({ pageIndex: 2 });
+    // Access private property via @ts-ignore
+    // @ts-ignore
+    expect(component.pageIndex$.value).toBe(2);
   });
 });

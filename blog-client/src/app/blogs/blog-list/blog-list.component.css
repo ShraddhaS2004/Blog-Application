@@ -69,3 +69,7 @@ mat-card-actions {
 .blog-card {
   position: relative;
 }
+.search-container {
+  display: flex;
+  justify-content: center;
+}
