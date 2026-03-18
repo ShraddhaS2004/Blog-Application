@@ -3,4 +3,5 @@ export interface Blog {
   name: string;
   description: string;
   author: string;
+  genre: string
 }

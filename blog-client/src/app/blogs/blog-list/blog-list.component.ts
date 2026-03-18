@@ -7,6 +7,8 @@ import { Blog } from '../../models/blog';
 import { MaterialModule } from '../../material/material.module';
 import { Observable, BehaviorSubject, combineLatest, map } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-blog-list',
@@ -17,19 +19,28 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class BlogListComponent implements OnInit {
 
-  blogs$ !: Observable<Blog[]>;
+  blogs$!: Observable<Blog[]>;
+  filteredBlogs$!: Observable<Blog[]>;
   paginatedBlogs$!: Observable<Blog[]>;
 
   pageSize = 6;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   private pageIndex$ = new BehaviorSubject<number>(0);
+  private selectedGenre$ = new BehaviorSubject<string>('');
+
+  genres$!: Observable<string[]>;
 
   loading = false;
   errorMessage = '';
 
   searchTerm: string = '';
 
-  selectMode = false;             // tracks if selection mode is on
-  selectedBlogs = new Set<number>(); // tracks selected blog IDs
+  selectMode = false;
+  selectedBlogs = new Set<number>();
+
+  
 
   constructor(
     private blogService: BlogService,
@@ -38,10 +49,28 @@ export class BlogListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.blogs$ = this.blogService.blogs$;
 
-    this.paginatedBlogs$ = combineLatest([
+    // ✅ Extract unique genres
+    this.genres$ = this.blogs$.pipe(
+      map(blogs => [...new Set(blogs.map(b => b.genre).filter(Boolean))])
+    );
+
+    // ✅ Filtered blogs (reactive)
+    this.filteredBlogs$ = combineLatest([
       this.blogs$,
+      this.selectedGenre$
+    ]).pipe(
+      map(([blogs, genre]) => {
+        if (!genre) return blogs;
+        return blogs.filter(b => b.genre === genre);
+      })
+    );
+
+    // ✅ Paginated blogs (after filtering)
+    this.paginatedBlogs$ = combineLatest([
+      this.filteredBlogs$,
       this.pageIndex$
     ]).pipe(
       map(([blogs, pageIndex]) => {
@@ -51,69 +80,79 @@ export class BlogListComponent implements OnInit {
       })
     );
 
+    // ✅ Initial load
     if (this.blogService.isEmpty()) {
-    this.loading = true;
-    this.blogService.loadAll().subscribe({
-      next: () => this.loading = false,
-      error: () => {
-        this.errorMessage = 'Failed to load blogs.';
-        this.loading = false;
-      }
-    });
-  }
-  }
-
-  searchBlogs(): void {
-  if (!this.searchTerm.trim()) {
-    // If empty, reload all blogs
-    this.loading = true;
-    this.blogService.loadAll().subscribe({
-      next: () => this.loading = false,
-      error: () => {
-        this.loading = false;
-        this.snackBar.open('Failed to load blogs.', 'Close', {
-          duration: 3000
-        });
-      }
-    });
-    return;
-  }
-
-  this.loading = true;
-  this.blogService.search(this.searchTerm).subscribe({
-    next: (blogs) => {
-      this.loading = false;
-      this.blogsSubjectUpdate(blogs);
-      this.pageIndex$.next(0); // reset paginator to first page
-    },
-    error: (error) => {
-      this.loading = false;
-      if (error.status === 404) {
-        this.snackBar.open(
-          "The blog you're looking for doesn't exist.",
-          'Close',
-          { duration: 3000 }
-        );
-      } else {
-        this.snackBar.open(
-          'Something went wrong while searching blogs.',
-          'Close',
-          { duration: 3000 }
-        );
-      }
+      this.loading = true;
+      this.blogService.loadAll().subscribe({
+        next: () => this.loading = false,
+        error: () => {
+          this.errorMessage = 'Failed to load blogs.';
+          this.loading = false;
+        }
+      });
     }
-  });
-}
+  }
 
-// Helper to update local BehaviorSubject (same as BlogService internal)
-private blogsSubjectUpdate(blogs: Blog[]): void {
-  // Directly update BehaviorSubject in service
-  (this.blogService as any).blogsSubject.next(blogs);
-}
+  // ✅ Genre filter change
+  onGenreChange(value: string): void {
+    this.selectedGenre$.next(value);
+    this.pageIndex$.next(0);
 
-onSearchInputChange(): void {
-  // If user deletes everything in the search box
-  if (!this.searchTerm.trim()) {
+    this.paginator?.firstPage();
+  }
+
+  // ✅ Pagination
+  onPageChange(event: any): void {
+    this.pageIndex$.next(event.pageIndex);
+  }
+
+  // ✅ Search
+  searchBlogs(): void {
+    if (!this.searchTerm.trim()) {
+      this.loadAllBlogs();
+      return;
+    }
+
+    this.loading = true;
+
+    this.blogService.search(this.searchTerm).subscribe({
+      next: (blogs) => {
+        this.loading = false;
+        this.updateBlogs(blogs);
+        this.pageIndex$.next(0);
+      },
+      error: (error) => {
+        this.loading = false;
+
+        if (error.status === 404) {
+          this.snackBar.open(
+            "The blog you're looking for doesn't exist.",
+            'Close',
+            { duration: 3000 }
+          );
+        } else {
+          this.snackBar.open(
+            'Something went wrong while searching blogs.',
+            'Close',
+            { duration: 3000 }
+          );
+        }
+      }
+    });
+  }
+
+  onSearchInputChange(): void {
+    if (!this.searchTerm.trim()) {
+      this.loadAllBlogs();
+    }
+  }
+
+  clearSearch(): void {
+    this.searchTerm = '';
+    this.loadAllBlogs();
+  }
+
+  private loadAllBlogs(): void {
     this.loading = true;
 
     this.blogService.loadAll().subscribe({
@@ -129,31 +168,12 @@ onSearchInputChange(): void {
       }
     });
   }
-}
 
-clearSearch(): void {
-  this.searchTerm = '';
-
-  this.loading = true;
-
-  this.blogService.loadAll().subscribe({
-    next: () => {
-      this.loading = false;
-      this.pageIndex$.next(0);
-    },
-    error: () => {
-      this.loading = false;
-      this.snackBar.open('Failed to load blogs.', 'Close', {
-        duration: 3000
-      });
-    }
-  });
-}
-
-  onPageChange(event: any) {
-    this.pageIndex$.next(event.pageIndex);
+  private updateBlogs(blogs: Blog[]): void {
+    (this.blogService as any).blogsSubject.next(blogs);
   }
 
+  // ✅ CRUD Actions
   delete(id: number): void {
     if (confirm('Are you sure you want to delete this blog?')) {
       this.blogService.delete(id).subscribe({
@@ -170,10 +190,12 @@ clearSearch(): void {
     this.router.navigate(['/create']);
   }
 
+  // ✅ Multi-select mode
   toggleSelectMode(): void {
     this.selectMode = !this.selectMode;
+
     if (!this.selectMode) {
-      this.selectedBlogs.clear(); // clear selection when exiting select mode
+      this.selectedBlogs.clear();
     }
   }
 
@@ -190,12 +212,12 @@ clearSearch(): void {
     if (count === 0) return;
 
     if (confirm(`Are you sure you want to delete ${count} blog(s)?`)) {
-      // Delete each selected blog
       this.selectedBlogs.forEach(id => {
         this.blogService.delete(id).subscribe({
           error: () => this.errorMessage = `Failed to delete blog with ID ${id}`
         });
       });
+
       this.selectedBlogs.clear();
       this.selectMode = false;
     }

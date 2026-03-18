@@ -56,6 +56,7 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure.Repository
                         .SetProperty(model => model.Name, blog.Name)
                         .SetProperty(model => model.Description, blog.Description)
                         .SetProperty(model => model.Author, blog.Author)
+                        .SetProperty(model => model.Genre, blog.Genre)
                 );
         }
     }

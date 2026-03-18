@@ -9,8 +9,8 @@ describe('BlogService', () => {
   let httpMock: any;
 
   const mockBlogs: Blog[] = [
-    { id: 1, name: 'Blog1', description: 'Desc1', author: 'Author1' },
-    { id: 2, name: 'Blog2', description: 'Desc2', author: 'Author2' },
+    { id: 1, name: 'Blog1', description: 'Desc1', author: 'Author1', genre: 'Genre1' },
+    { id: 2, name: 'Blog2', description: 'Desc2', author: 'Author2', genre: 'Genre2' },
   ];
 
   beforeEach(() => {
@@ -43,7 +43,7 @@ describe('BlogService', () => {
   });
 
   it('should create a blog and prepend to blogsSubject', (done) => {
-    const newBlog: Blog = { id: 3, name: 'Blog3', description: 'Desc3', author: 'Author3' };
+    const newBlog: Blog = { id: 3, name: 'Blog3', description: 'Desc3', author: 'Author3', genre: 'Genre3' };
     httpMock.post.mockReturnValue(of(newBlog));
 
     service.create(newBlog).subscribe(blog => {
@@ -58,7 +58,7 @@ describe('BlogService', () => {
     // set initial blogs
     (service as any).blogsSubject.next([...mockBlogs]);
 
-    const updatedBlog: Blog = { id: 1, name: 'Updated', description: 'Updated Desc', author: 'Author1' };
+    const updatedBlog: Blog = { id: 1, name: 'Updated', description: 'Updated Desc', author: 'Author1', genre: 'Genre1' };
     httpMock.put.mockReturnValue(of(void 0));
 
     service.update(1, updatedBlog).subscribe(() => {

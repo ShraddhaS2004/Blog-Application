@@ -15,7 +15,7 @@ public class BlogReadRepository : IBlogReadRepository
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        var sql = "SELECT Id, Name, Description, Author FROM Blogs WHERE Id = @Id";
+        var sql = "SELECT Id, Name, Description, Author, Genre FROM Blogs WHERE Id = @Id";
 
         return await connection.QueryFirstOrDefaultAsync<BlogVm>(sql, new { Id = id });
     }
@@ -36,7 +36,7 @@ public class BlogReadRepository : IBlogReadRepository
         using var connection = _connectionFactory.CreateConnection();
 
         var sql = @"SELECT * FROM Blogs 
-                WHERE Name LIKE @Search OR Description LIKE @Search";
+                WHERE Name LIKE @Search OR Description LIKE @Search OR Author LIKE @Search" ;
 
         // Wrap term with '%' for LIKE search
         var blogs = await connection.QueryAsync<BlogVm>(sql, new { Search = $"%{searchTerm}%" });

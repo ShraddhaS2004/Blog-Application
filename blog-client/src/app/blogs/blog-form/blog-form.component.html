@@ -29,6 +29,18 @@
           </mat-form-field>
 
           <mat-form-field appearance="outline">
+  <mat-label>Genre</mat-label>
+  <mat-select formControlName="genre">
+    <mat-option *ngFor="let g of genres" [value]="g">
+      {{ g }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="blogForm.get('genre')?.hasError('required')">
+    Genre is required
+  </mat-error>
+</mat-form-field>
+
+          <mat-form-field appearance="outline">
             <mat-label>Author</mat-label>
             <input matInput formControlName="author">
             <mat-error *ngIf="blogForm.get('author')?.hasError('required')">

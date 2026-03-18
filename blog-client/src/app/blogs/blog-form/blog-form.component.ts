@@ -33,13 +33,27 @@ export class BlogFormComponent implements OnInit {
     private fb: FormBuilder
   ) {}
 
+  genres: string[] = [
+  'Tech',
+  'Lifestyle',
+  'Health & Wellness',
+  'Travel',
+  'Cooking',
+  'Sports',
+  'Education',
+  'Finance',
+  'Personal Development',
+  'Business and Startups'
+];
+
   ngOnInit(): void {
 
     this.blogForm = this.fb.group({
       id: [null],
       name: ['', Validators.required],
       description: ['', Validators.required],
-      author: ['', Validators.required]
+      author: ['', Validators.required],
+      genre: ['', Validators.required]
     });
 
     const id = this.route.snapshot.paramMap.get('id');
@@ -55,7 +69,8 @@ export class BlogFormComponent implements OnInit {
           id: data.id,
           name: data.name,
           description: data.description,
-          author: data.author
+          author: data.author,
+          genre: data.genre
         });
 
         // store initial value

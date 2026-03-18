@@ -23,7 +23,7 @@ namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.CreateBlog
         }
         public async Task<BlogVm> Handle(CreateBlogCommand request, CancellationToken cancellationToken)
         {
-            var blogEntity = new Blog() { Name = request.Name ,Description = request.Description, Author=request.Author};
+            var blogEntity = new Blog() { Name = request.Name ,Description = request.Description, Author=request.Author, Genre=request.Genre};
             var result = await _blogRepository.CreateAsync(blogEntity);
             return _mapper.Map<BlogVm>(result);
         }

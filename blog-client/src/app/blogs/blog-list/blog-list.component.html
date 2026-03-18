@@ -41,6 +41,21 @@
   </mat-form-field>
 </div>
 
+<div style="margin-bottom: 1rem;">
+  <mat-form-field appearance="outline" style="width: 300px;">
+    <mat-label>Filter by Genre</mat-label>
+    <mat-select (selectionChange)="onGenreChange($event.value)">
+      
+      <mat-option value="">All</mat-option>
+
+      <mat-option *ngFor="let g of genres$ | async" [value]="g">
+        {{ g }}
+      </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+</div>
+
   <!-- Loading Spinner -->
   <div *ngIf="loading" class="center">
     <mat-spinner diameter="50"></mat-spinner>
@@ -71,6 +86,10 @@
               (change)="toggleBlogSelection(blog.id!)">
         </mat-checkbox>
 
+        <div class="genre-tag" *ngIf="blog.genre">
+  {{ blog.genre }}
+</div>
+
         <mat-card-header>
           <mat-card-title>{{ blog.name }}</mat-card-title>
           <mat-card-subtitle>By {{ blog.author }}</mat-card-subtitle>
@@ -96,7 +115,7 @@
     </div>
 
     <mat-paginator
-  [length]="(blogs$ | async)?.length || 0"
+  [length]="(filteredBlogs$ | async)?.length || 0"
   [pageSize]="6"
   [pageSizeOptions]="[6]"
   (page)="onPageChange($event)">

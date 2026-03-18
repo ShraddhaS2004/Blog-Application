@@ -21,6 +21,10 @@ namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.CreateBlog
             RuleFor(x=> x.Author)
                 .NotEmpty().WithMessage("Author is required")
                 .MaximumLength(100).WithMessage("Author must not exceed 100 characters");
+
+            RuleFor(x => x.Genre)
+                .NotEmpty().WithMessage("Genre is required")
+                .MaximumLength(50).WithMessage("Genre must not exceed 50 characters");
         }
     }
 }

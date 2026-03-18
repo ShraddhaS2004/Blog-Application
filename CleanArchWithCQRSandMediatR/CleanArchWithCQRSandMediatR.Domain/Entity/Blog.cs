@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,10 +21,18 @@ namespace CleanArchWithCQRSandMediatR.Domain.Entities
             set => _description = value?.Trim() ?? string.Empty;
         }
 
-        public string _author;
+        private string _author;
         public string Author { 
             get => _author;
             set => _author = value?.Trim() ?? string.Empty;
         }
+
+        private string _genre;
+        public string Genre
+        {
+            get => _genre;
+            set => _genre =value?.Trim() ?? string.Empty;
+        }
+
     }
 }

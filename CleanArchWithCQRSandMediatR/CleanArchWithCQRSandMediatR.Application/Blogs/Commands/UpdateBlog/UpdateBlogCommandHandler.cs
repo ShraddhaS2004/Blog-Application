@@ -24,7 +24,8 @@ namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.UpdateBlog
                 Id = request.Id,
                 Name = request.Name,
                 Description = request.Description,
-                Author = request.Author
+                Author = request.Author,
+                Genre = request.Genre
             };
             return await _blogRepository.UpdateAsync(request.Id,updateBlogEnitity);
         }
