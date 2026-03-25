@@ -24,7 +24,7 @@ public class BlogReadRepository : IBlogReadRepository
     {
         using var connection=_connectionFactory.CreateConnection();
 
-        var sql = "SELECT * FROM Blogs";
+        var sql = "SELECT * FROM Blogs ORDER BY Id DESC";
 
         var blogs= await connection.QueryAsync<BlogVm>(sql, new { Id = 0 });
 

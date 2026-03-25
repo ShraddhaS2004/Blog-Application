@@ -15,6 +15,27 @@
       Create Blog
     </button>
 
+    <button 
+  mat-raised-button 
+  color="accent" 
+  style="margin-left: 1rem;"
+  *ngIf="hasChanges"
+  (click)="saveChanges()">
+  
+  <mat-icon>save</mat-icon>
+  Save Changes
+</button>
+
+<button 
+  mat-raised-button 
+  color="basic" 
+  style="margin-left: 1rem;"
+  *ngIf="hasChanges"
+  (click)="cancelChanges()">
+
+  Cancel Changes
+</button>
+
     <button mat-raised-button color="warn" style="margin-left: 1rem;" (click)="deleteSelected()" *ngIf="selectMode && selectedBlogs.size > 0">
       <mat-icon>delete</mat-icon>
       Delete Selected ({{ selectedBlogs.size }})
@@ -78,7 +99,13 @@
 
     <!-- Blogs Grid -->
     <div class="blogs-grid" *ngIf="blogs.length > 0">
-      <mat-card *ngFor="let blog of paginatedBlogs$ | async" class="blog-card">
+      <mat-card 
+  *ngFor="let blog of paginatedBlogs$ | async"
+  [ngClass]="{
+  'new-card': isStaged(blog) && blog.id! < 0,
+  'edited-card': isStaged(blog) && blog.id! > 0
+}"
+  class="blog-card">
 
         <!-- Checkbox in select mode -->
         <mat-checkbox *ngIf="selectMode"
@@ -100,12 +127,12 @@
         </mat-card-content>
 
         <mat-card-actions align="end">
-          <button mat-stroked-button color="primary" (click)="edit(blog.id!)">
+          <button mat-stroked-button color="primary" (click)="edit(blog.id!)" [disableRipple]="true">
             <mat-icon>edit</mat-icon>
             Edit
           </button>
 
-          <button mat-stroked-button color="warn" (click)="delete(blog.id!)">
+          <button mat-stroked-button color="warn" (click)="delete(blog.id!)" [disableRipple]="true">
             <mat-icon>delete</mat-icon>
             Delete
           </button>

@@ -10,6 +10,7 @@ describe('BlogListComponent', () => {
   let blogServiceMock: any;
   let routerMock: any;
   let snackBarMock: any;
+  let cdrMock: any;
 
   beforeEach(() => {
     const blogsSubject = new BehaviorSubject([
@@ -28,8 +29,9 @@ describe('BlogListComponent', () => {
 
     routerMock = { navigate: vi.fn() };
     snackBarMock = { open: vi.fn() };
+    cdrMock = { detectChanges: vi.fn() };
 
-    component = new BlogListComponent(blogServiceMock, routerMock, snackBarMock);
+    component = new BlogListComponent(blogServiceMock, routerMock, snackBarMock, cdrMock);
   });
 
   it('should initialize blogs and paginatedBlogs', () => {

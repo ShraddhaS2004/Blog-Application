@@ -1,5 +1,6 @@
 Global Soft Blue Theme Styles
 
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +17,15 @@ body {
 
 html, body {
   height: 100%;
+}
+
+.mat-mdc-stroked-button:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.mat-mdc-stroked-button .mdc-button__ripple::before,
+.mat-mdc-stroked-button .mdc-button__ripple::after {
+  opacity: 0 !important;
 }
 
 /* Typography */

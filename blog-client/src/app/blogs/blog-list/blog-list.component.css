@@ -53,6 +53,13 @@ mat-card-actions {
   gap: 0.5rem;
 }
 
+.mat-mdc-raised-button:hover,
+.mat-mdc-unelevated-button:hover,
+.mat-mdc-outlined-button:hover,
+.mat-mdc-button:hover {
+  background-color: rgba(33, 150, 243, 0.3); /* very light blue */
+}
+
 @media (max-width: 600px) {
   .blogs-grid {
     grid-template-columns: 1fr;
@@ -84,4 +91,19 @@ mat-card-actions {
   border-radius: 12px;
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+.pending-upsert {
+  border: 2px solid #4caf50;
+  background-color: #f1fff3;
+}
+
+.new-card {
+  border: 2px solid #2196f3; /* blue */
+  background-color: #eef6ff;
+}
+
+.edited-card {
+  border: 2px solid #ff9800; /* orange */
+  background-color: #fff8e1;
 }

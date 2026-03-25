@@ -25,6 +25,8 @@ export class BlogFormComponent implements OnInit {
 
   blogId!: number;
 
+  ignoreGuard = false;
+
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogService,
@@ -126,50 +128,75 @@ const normalize = (obj: any) => {
    */
   onSubmit() {
 
+    // if (!this.hasFormChanged()) {
+
+    //   this.snackBar.open('No changes detected!', 'Close', {
+    //     duration: 2000
+    //   });
+
+    //   setTimeout(() => {
+    //   this.router.navigate(['/']);
+    // }, 500);
+
+    //   return;
+    // }
+
+    // const formValue = this.blogForm.getRawValue();
+
+    // if (this.isEditMode) {
+
+    //   //const id = this.route.snapshot.paramMap.get('id');
+
+    //   this.blogService.update(formValue.id, formValue).subscribe(() => {
+
+    //     this.snackBar.open('Blog updated successfully!', 'Close', {
+    //       duration: 3000,
+    //       panelClass: ['success-snackbar'],
+    //     });
+
+    //     this.initialFormValue = this.blogForm.getRawValue();
+
+    //     this.router.navigate(['/']);
+    //   });
+
+    // } else {
+
+    //   this.blogService.create(formValue).subscribe(() => {
+
+    //     this.snackBar.open('Blog saved successfully!', 'Close', {
+    //       duration: 3000,
+    //       panelClass: ['success-snackbar'],
+    //     });
+
+    //     this.initialFormValue = this.blogForm.getRawValue();
+
+    //     this.router.navigate(['/']);
+    //   });
+    // }
     if (!this.hasFormChanged()) {
 
-      this.snackBar.open('No changes detected!', 'Close', {
-        duration: 2000
-      });
-
-      setTimeout(() => {
+    this.snackBar.open('No changes detected!', 'Close', {
+      duration: 2000
+    });
+    this.ignoreGuard = true; // bypass guard
+    setTimeout(() => {
       this.router.navigate(['/']);
     }, 500);
 
-      return;
-    }
+    return;
+  }
 
-    const formValue = this.blogForm.getRawValue();
+  const formValue = this.blogForm.getRawValue();
 
-    if (this.isEditMode) {
-
-      //const id = this.route.snapshot.paramMap.get('id');
-
-      this.blogService.update(formValue.id, formValue).subscribe(() => {
-
-        this.snackBar.open('Blog updated successfully!', 'Close', {
-          duration: 3000,
-          panelClass: ['success-snackbar'],
-        });
-
-        this.initialFormValue = this.blogForm.getRawValue();
-
-        this.router.navigate(['/']);
-      });
-
-    } else {
-
-      this.blogService.create(formValue).subscribe(() => {
-
-        this.snackBar.open('Blog saved successfully!', 'Close', {
-          duration: 3000,
-          panelClass: ['success-snackbar'],
-        });
-
-        this.initialFormValue = this.blogForm.getRawValue();
-
-        this.router.navigate(['/']);
-      });
-    }
+   if (this.isEditMode) {
+    this.blogService.stageUpsert(formValue);
+    this.ignoreGuard = true; // bypass guard
+    this.router.navigate(['/']); 
+  } else {
+    // Stage creation
+    this.blogService.stageUpsert(formValue);
+    this.ignoreGuard = true;
+    this.router.navigate(['/']);
+  }
   }
 }

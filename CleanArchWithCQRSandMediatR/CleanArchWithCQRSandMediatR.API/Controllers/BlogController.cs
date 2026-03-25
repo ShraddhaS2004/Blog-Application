@@ -1,11 +1,14 @@
 ﻿using CleanArchWithCQRSandMediatR.Application.Blogs.Commands.CreateBlog;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Commands.DeleteBlog;
+using CleanArchWithCQRSandMediatR.Application.Blogs.Commands.DeleteMultipleBlogs;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Commands.UpdateBlog;
+using CleanArchWithCQRSandMediatR.Application.Blogs.Commands.UpsertBlogs;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogs;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsById;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsByIdDapper;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsBySearchDapper;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogsDapper;
+using CleanArchWithCQRSandMediatR.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -113,6 +116,46 @@ namespace CleanArchWithCQRSandMediatR.API.Controllers
                 return BadRequest();
             }
             return NoContent();
+        }
+
+        [HttpDelete("DeleteMultiple")]
+        public async Task<IActionResult> DeleteMultiple([FromBody] List<int> ids)
+        {
+            if (ids == null || !ids.Any())
+            {
+                return BadRequest(new
+                {
+                    message = "No IDs provided for deletion",
+                    statusCode = 400
+                });
+            }
+
+            var result = await Mediator.Send(new DeleteMultipleBlogCommand
+            {
+                Ids = ids
+            });
+
+            if (result == 0)
+            {
+                return NotFound(new
+                {
+                    message = "No matching blogs found to delete",
+                    statusCode = 404
+                });
+            }
+
+            return NoContent();
+        }
+
+        [HttpPost("Upsert")]
+        public async Task<IActionResult> Upsert([FromBody] List<Blog> blogs)
+        {
+            var result = await Mediator.Send(new UpsertBlogCommand
+            {
+                Blogs = blogs
+            });
+
+            return Ok(result);
         }
     }
 }

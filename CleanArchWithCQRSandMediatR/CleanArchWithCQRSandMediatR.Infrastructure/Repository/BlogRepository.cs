@@ -59,5 +59,44 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure.Repository
                         .SetProperty(model => model.Genre, blog.Genre)
                 );
         }
+
+        public async Task<int> DeleteMultipleAsync(List<int> ids)
+        {
+            return await _blogDbContext.Blogs
+                .Where(b => ids.Contains(b.Id))
+                .ExecuteDeleteAsync();
+        }
+
+        public async Task<List<int>> UpsertMultipleAsync(List<Blog> blogs)
+        {
+            var resultIds = new List<int>();
+
+            var blogsToUpdate = blogs.Where(b => b.Id > 0).ToList();
+            var blogsToCreate = blogs.Where(b => b.Id == 0).ToList();
+
+            foreach (var blog in blogsToUpdate)
+            {
+                await _blogDbContext.Blogs
+                    .Where(b => b.Id == blog.Id)
+                    .ExecuteUpdateAsync(setters => setters
+                        .SetProperty(b => b.Name, blog.Name)
+                        .SetProperty(b => b.Description, blog.Description)
+                        .SetProperty(b => b.Author, blog.Author)
+                        .SetProperty(b => b.Genre, blog.Genre)
+                    );
+
+                resultIds.Add(blog.Id);
+            }
+
+            if (blogsToCreate.Any())
+            {
+                await _blogDbContext.Blogs.AddRangeAsync(blogsToCreate);
+                await _blogDbContext.SaveChangesAsync();
+
+                resultIds.AddRange(blogsToCreate.Select(b => b.Id));
+            }
+
+            return resultIds;
+        }
     }
 }

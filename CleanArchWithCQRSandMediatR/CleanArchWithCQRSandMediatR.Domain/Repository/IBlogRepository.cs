@@ -14,5 +14,7 @@ namespace CleanArchWithCQRSandMediatR.Domain.Repository
         Task<Blog> CreateAsync(Blog blog);
         Task<int> UpdateAsync(int id, Blog blog);
         Task<int> DeleteAsync(int id);
+        Task<int> DeleteMultipleAsync(List<int> ids);
+        Task<List<int>> UpsertMultipleAsync(List<Blog> blogs);
     }
 }

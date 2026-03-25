@@ -45,6 +45,17 @@ export class BlogService {
 
   private apiUrl = 'http://localhost:5103/Blog';
 
+  private stagedUpsertsSubject = new BehaviorSubject<Blog[]>([]);
+  stagedUpserts$ = this.stagedUpsertsSubject.asObservable();
+
+  private tempIdCounter = -1;
+
+  private stagedUpserts: Blog[] = [];
+
+  private pendingDeletes: number[] = [];
+private pendingDeletesSubject = new BehaviorSubject<number[]>([]);
+pendingDeletes$ = this.pendingDeletesSubject.asObservable();
+
   // Local state of blogs
   private blogsSubject = new BehaviorSubject<Blog[]>([]);
   blogs$ = this.blogsSubject.asObservable();
@@ -90,6 +101,16 @@ export class BlogService {
     );
   }
 
+  removeStagedIfExists(id: number): boolean {
+  const index = this.stagedUpserts.findIndex(b => b.id === id);
+  if (index > -1) {
+    this.stagedUpserts.splice(index, 1);
+    this.stagedUpsertsSubject.next([...this.stagedUpserts]);
+    return true; // indicates it was staged and removed
+  }
+  return false; // not staged
+}
+
   // Add this method to BlogService
 search(term: string): Observable<Blog[]> {
   return this.http.get<Blog[]>(`${this.apiUrl}/SearchBlogsDapper/search?term=${encodeURIComponent(term)}`).pipe(
@@ -99,7 +120,86 @@ search(term: string): Observable<Blog[]> {
   );
 }
 
+deleteMultiple(ids: number[]) {
+  return this.http.delete(`${this.apiUrl}/DeleteMultiple/DeleteMultiple`, {
+    body: ids
+  });
+}
+
+stageUpsert(blog: Blog) {
+  if (!blog.id || blog.id === 0) {
+    blog.id = this.tempIdCounter--;
+  }
+
+  const stagedIndex = this.stagedUpserts.findIndex(b => b.id === blog.id);
+  if (stagedIndex > -1) {
+    this.stagedUpserts[stagedIndex] = blog;
+  } else {
+    this.stagedUpserts.unshift(blog);
+  }
+
+  this.stagedUpsertsSubject.next([...this.stagedUpserts]);
+
+  // 3️⃣ Update frontend blogsSubject safely
+  // const currentBlogs = this.blogsSubject.value.slice();
+  // const index = currentBlogs.findIndex(b => b.id === blog.id);
+  // if (index > -1) {
+  //   currentBlogs[index] = blog;
+  // } else {
+  //   currentBlogs.unshift(blog);
+  // }
+
+  // this.blogsSubject.next(currentBlogs);
+  const currentBlogs = this.blogsSubject.value
+    .filter(b => b.id !== blog.id); // remove old version first
+
+  this.blogsSubject.next([blog, ...currentBlogs]);
+  }
+
+upsert(blogs: Blog[]): Observable<any> {
+  const payload = this.stagedUpserts.map(b => ({
+    ...b,
+    id: b.id! < 0 ? 0 : b.id // backend interprets 0 as new blog
+  }));
+    // API endpoint for upsert should handle both create and update
+    return this.http.post(`${this.apiUrl}/Upsert/Upsert`, payload).pipe(
+    tap(res => {
+      this.tempIdCounter = -1; // reset temp counter
+    })
+  );
+  }
+
+  clearStaged() {
+  this.stagedUpserts = [];
+  this.stagedUpsertsSubject.next([]);
+}
+
   isEmpty(): boolean {
     return this.blogsSubject.value.length === 0;
   }
+
+  addDelete(id: number) {
+  if (id < 0) {
+    this.removeStagedIfExists(id);
+    return;
+  }
+
+  // ✅ If it's already staged (existing blog edited but not saved yet)
+  const wasStaged = this.removeStagedIfExists(id);
+
+  // ✅ Only add to deletes if it wasn't just removed from staging
+  if (!wasStaged && !this.pendingDeletes.includes(id)) {
+    this.pendingDeletes.push(id);
+    this.pendingDeletesSubject.next([...this.pendingDeletes]);
+  }
+}
+
+getDeletes(): number[] {
+  return this.pendingDeletes;
+}
+
+clearDeletes() {
+  this.pendingDeletes = [];
+  this.pendingDeletesSubject.next([]);
+}
 }
