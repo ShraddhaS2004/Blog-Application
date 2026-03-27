@@ -191,11 +191,13 @@ const normalize = (obj: any) => {
    if (this.isEditMode) {
     this.blogService.stageUpsert(formValue);
     this.ignoreGuard = true; // bypass guard
+    this.blogService.setEditMode(true);
     this.router.navigate(['/']); 
   } else {
     // Stage creation
     this.blogService.stageUpsert(formValue);
     this.ignoreGuard = true;
+    this.blogService.setEditMode(true);
     this.router.navigate(['/']);
   }
   }

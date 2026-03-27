@@ -1,10 +1,10 @@
-<div class="list-container">
+<!--<div class="list-container">
 
-  <!-- Toolbar with Create button -->
   <mat-toolbar>
     <span>Blogs</span>
     <span class="spacer"></span>
 
+    <ng-container *ngIf="isEditMode">
     <button mat-raised-button color="primary" (click)="toggleSelectMode()">
       <mat-icon>{{ selectMode ? 'close' : 'check_box' }}</mat-icon>
       {{ selectMode ? 'Cancel' : 'Select' }}
@@ -40,10 +40,17 @@
       <mat-icon>delete</mat-icon>
       Delete Selected ({{ selectedBlogs.size }})
     </button>
+</ng-container>
 
+<button *ngIf="!isEditMode"
+          mat-raised-button
+          color="primary"
+          (click)="enterEditMode()">
+    <mat-icon>edit</mat-icon>
+    Edit Mode
+  </button>
   </mat-toolbar>
 
-  <!-- Search Input -->
 <div class="search-container" style="margin: 1rem 0;">
   <mat-form-field appearance="outline" style="width: 100%;">
     <mat-label>Search Blogs</mat-label>
@@ -77,6 +84,242 @@
   </mat-form-field>
 </div>
 
+  <div *ngIf="loading" class="center">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <ng-container *ngIf="blogs$ | async as blogs">
+    
+    <div *ngIf="!loading && blogs.length === 0" class="empty-state">
+      No blogs found. Create your first blog!
+    </div>
+
+    <div class="blogs-grid" *ngIf="blogs.length > 0">
+      <mat-card 
+  *ngFor="let blog of paginatedBlogs$ | async"
+  [ngClass]="{
+  'new-card': isStaged(blog) && blog.id! < 0,
+  'edited-card': isStaged(blog) && blog.id! > 0
+}"
+(click)="openBlog(blog)"
+  [class.clickable]="!isEditMode"
+  class="blog-card">
+
+        <mat-checkbox *ngIf="selectMode"
+              [checked]="isSelected(blog.id!)"
+              (change)="toggleBlogSelection(blog.id!)">
+        </mat-checkbox>
+
+        <div class="genre-tag" *ngIf="blog.genre">
+  {{ blog.genre }}
+</div>
+
+        <mat-card-header>
+          <mat-card-title>{{ blog.name }}</mat-card-title>
+          <mat-card-subtitle>By {{ blog.author }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>{{ blog.description }}</p>
+        </mat-card-content>
+
+        <mat-card-actions align="end" *ngIf="isEditMode">
+          <button mat-stroked-button color="primary" (click)="edit(blog.id!)" [disableRipple]="true">
+            <mat-icon>edit</mat-icon>
+            Edit
+          </button>
+
+          <button mat-stroked-button color="warn" (click)="delete(blog.id!)" [disableRipple]="true">
+            <mat-icon>delete</mat-icon>
+            Delete
+          </button>
+        </mat-card-actions>
+
+      </mat-card>
+    </div>
+
+    <mat-paginator
+  [length]="(filteredBlogs$ | async)?.length || 0"
+  [pageSize]="6"
+  [pageSizeOptions]="[6]"
+  (page)="onPageChange($event)">
+</mat-paginator>
+
+  </ng-container>
+
+</div>-->
+
+<mat-drawer-container class="drawer-container">
+
+  <mat-drawer 
+  mode="over" 
+  position="end" 
+  [opened]="showLegend"
+  autosize>
+
+  <div class="legend-container">
+    <h2>Genre Legend</h2>
+
+    <div *ngFor="let item of legendItems" class="legend-item">
+  <span 
+    class="legend-dot"
+    [ngStyle]="{ 'background-color': item.color }">
+  </span>
+  {{ item.name }}
+</div>
+
+    <button mat-raised-button (click)="showLegend = false">
+      Close
+    </button>
+  </div>
+
+</mat-drawer>
+  <!-- SIDE PANEL -->
+  <mat-drawer mode="over" position="end" [opened]="selectedBlog !== null" autosize>
+
+    <div *ngIf="selectedBlog" class="blog-viewer">
+      <div class="form-container">
+
+      <h2 class="drawer-title">View Blog</h2>
+      <!-- Blog Header -->
+    <form class="read-only-form">
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Blog Name</mat-label>
+    <input matInput [value]="selectedBlog.name" disabled>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Author</mat-label>
+    <input matInput [value]="selectedBlog.author" disabled>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Genre</mat-label>
+    <input matInput [value]="selectedBlog.genre" disabled>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Description</mat-label>
+    <textarea matInput [value]="selectedBlog.description" disabled></textarea>
+  </mat-form-field>
+
+  <div class="blog-actions">
+    <button mat-raised-button color="primary" (click)="selectedBlog = null">Close</button>
+  </div>
+</form>
+</div>
+    </div>
+
+  </mat-drawer>
+
+  <!-- MAIN CONTENT -->
+  <mat-drawer-content>
+    <!-- your existing page content -->
+     <div class="list-container">
+
+  <!-- Toolbar with Create button -->
+  <mat-toolbar>
+    <span>Blogs</span>
+    <span class="spacer"></span>
+
+    <ng-container *ngIf="isEditMode">
+    <button mat-raised-button color="primary" (click)="toggleSelectMode()">
+      <mat-icon>{{ selectMode ? 'close' : 'check_box' }}</mat-icon>
+      {{ selectMode ? 'Cancel' : 'Select' }}
+    </button>
+
+    <button mat-raised-button color="primary" style="margin-left: 1rem;"(click)="create()">
+      <mat-icon>add</mat-icon>
+      Create Blog
+    </button>
+
+    <button mat-raised-button color="primary" style="margin-left: 1rem;" (click)="exitEditMode()">
+  <mat-icon>visibility</mat-icon>
+  View Mode
+</button>
+
+    <button 
+  mat-raised-button 
+  color="accent" 
+  style="margin-left: 1rem;"
+  *ngIf="hasChanges"
+  (click)="saveChanges()">
+  
+  <mat-icon>save</mat-icon>
+  Save Changes
+</button>
+
+<button 
+  mat-raised-button 
+  color="basic" 
+  style="margin-left: 1rem;"
+  *ngIf="hasChanges"
+  (click)="cancelChanges()">
+
+  Cancel Changes
+</button>
+
+    <button mat-raised-button color="warn" style="margin-left: 1rem;" (click)="deleteSelected()" *ngIf="selectMode && selectedBlogs.size > 0">
+      <mat-icon>delete</mat-icon>
+      Delete Selected ({{ selectedBlogs.size }})
+    </button>
+</ng-container>
+
+<button *ngIf="!isEditMode"
+          mat-raised-button
+          color="primary"
+          (click)="enterEditMode()">
+    <mat-icon>edit</mat-icon>
+    Edit Mode
+  </button>
+  </mat-toolbar>
+
+  <!-- Search Input -->
+<div class="search-container" style="margin: 1rem 0;">
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Search Blogs</mat-label>
+    <input matInput [(ngModel)]="searchTerm" (keyup.enter)="searchBlogs()" (input)="onSearchInputChange()" placeholder="Enter blog name or description">
+    <button
+      *ngIf="searchTerm"
+      mat-icon-button
+      matSuffix
+      (click)="clearSearch()"
+      aria-label="Clear search">
+      <mat-icon>close</mat-icon>
+    </button>
+    <button mat-icon-button matSuffix (click)="searchBlogs()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px;">
+  <mat-form-field appearance="outline" style="width: 300px;">
+    <mat-label>Filter by Genre</mat-label>
+    <mat-select (selectionChange)="onGenreChange($event.value)">
+      
+      <mat-option value="">All</mat-option>
+
+      <mat-option *ngFor="let g of genres$ | async" [value]="g">
+        <span 
+    class="legend-dot"
+    [ngStyle]="{ 'background-color': getGenreColor(g) }">
+  </span>
+        {{ g }}
+      </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-icon-button (click)="showLegend = true">
+    <mat-icon>info</mat-icon>
+  </button>
+</div>
+
   <!-- Loading Spinner -->
   <div *ngIf="loading" class="center">
     <mat-spinner diameter="50"></mat-spinner>
@@ -105,6 +348,8 @@
   'new-card': isStaged(blog) && blog.id! < 0,
   'edited-card': isStaged(blog) && blog.id! > 0
 }"
+(click)="openBlog(blog)"
+  [class.clickable]="!isEditMode"
   class="blog-card">
 
         <!-- Checkbox in select mode -->
@@ -113,8 +358,11 @@
               (change)="toggleBlogSelection(blog.id!)">
         </mat-checkbox>
 
-        <div class="genre-tag" *ngIf="blog.genre">
-  {{ blog.genre }}
+        <div 
+  class="genre-dot"
+  *ngIf="blog.genre"
+  matTooltip="{{ blog.genre }}"
+  [ngStyle]="{ 'background-color': getGenreColor(blog.genre) }">
 </div>
 
         <mat-card-header>
@@ -126,7 +374,7 @@
           <p>{{ blog.description }}</p>
         </mat-card-content>
 
-        <mat-card-actions align="end">
+        <mat-card-actions align="end" *ngIf="isEditMode">
           <button mat-stroked-button color="primary" (click)="edit(blog.id!)" [disableRipple]="true">
             <mat-icon>edit</mat-icon>
             Edit
@@ -143,11 +391,14 @@
 
     <mat-paginator
   [length]="(filteredBlogs$ | async)?.length || 0"
-  [pageSize]="6"
-  [pageSizeOptions]="[6]"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
   (page)="onPageChange($event)">
 </mat-paginator>
 
   </ng-container>
 
 </div>
+  </mat-drawer-content>
+
+</mat-drawer-container>

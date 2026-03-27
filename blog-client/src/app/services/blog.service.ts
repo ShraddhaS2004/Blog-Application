@@ -60,6 +60,9 @@ pendingDeletes$ = this.pendingDeletesSubject.asObservable();
   private blogsSubject = new BehaviorSubject<Blog[]>([]);
   blogs$ = this.blogsSubject.asObservable();
 
+  private editModeSubject = new BehaviorSubject<boolean>(false);
+  editMode$ = this.editModeSubject.asObservable();
+
   constructor(private http: HttpClient) {}
 
   // Load all blogs once
@@ -165,14 +168,23 @@ upsert(blogs: Blog[]): Observable<any> {
     return this.http.post(`${this.apiUrl}/Upsert/Upsert`, payload).pipe(
     tap(res => {
       this.tempIdCounter = -1; // reset temp counter
+      this.stagedUpserts = [];
+      this.stagedUpsertsSubject.next([]);
     })
   );
   }
 
+  setEditMode(value: boolean) {
+  this.editModeSubject.next(value);
+}
+
+getEditMode(): boolean {
+  return this.editModeSubject.value;
+}
   clearStaged() {
   this.stagedUpserts = [];
   this.stagedUpsertsSubject.next([]);
-}
+  }
 
   isEmpty(): boolean {
     return this.blogsSubject.value.length === 0;
@@ -185,10 +197,10 @@ upsert(blogs: Blog[]): Observable<any> {
   }
 
   // ✅ If it's already staged (existing blog edited but not saved yet)
-  const wasStaged = this.removeStagedIfExists(id);
+  this.removeStagedIfExists(id);
 
   // ✅ Only add to deletes if it wasn't just removed from staging
-  if (!wasStaged && !this.pendingDeletes.includes(id)) {
+  if (!this.pendingDeletes.includes(id)) {
     this.pendingDeletes.push(id);
     this.pendingDeletesSubject.next([...this.pendingDeletes]);
   }

@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   exports: [
@@ -21,7 +23,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatCheckboxModule,
     MatPaginatorModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule,
+    MatTooltipModule
   ]
 })
 export class MaterialModule {}

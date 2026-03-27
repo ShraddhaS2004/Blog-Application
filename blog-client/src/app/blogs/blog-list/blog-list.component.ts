@@ -27,13 +27,33 @@ export class BlogListComponent implements OnInit {
   paginatedBlogs$!: Observable<Blog[]>;
 
   pageSize = 6;
+  pageSizeOptions = [3, 6, 9];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   private pageIndex$ = new BehaviorSubject<number>(0);
+  private pageSize$ = new BehaviorSubject<number>(this.pageSize);
   private selectedGenre$ = new BehaviorSubject<string>('');
 
   genres$!: Observable<string[]>;
+
+  genreColors: { [key: string]: string } = {
+  'Tech': '#1e88e5',                  // blue
+  'Lifestyle': '#8e24aa',             // purple
+  'Health & Wellness': '#43a047',     // green
+  'Travel': '#00acc1',                // teal
+  'Cooking': '#fb8c00',               // orange
+  'Sports': '#e53935',                // red
+  'Education': '#3949ab',             // indigo
+  'Finance': '#2e7d32',               // dark green
+  'Personal Development': '#fdd835',  // yellow
+  'Business and Startups': '#6d4c41'  // brown
+};
+
+legendItems = Object.entries(this.genreColors).map(([name, color]) => ({
+  name,
+  color
+}));
 
   loading = false;
   errorMessage = '';
@@ -48,6 +68,11 @@ export class BlogListComponent implements OnInit {
 
   pendingUpserts: Blog[] = [];
 
+  isEditMode = false;
+selectedBlog: Blog | null = null;
+
+showLegend = false;
+
   constructor(
     private blogService: BlogService,
     private router: Router,
@@ -57,6 +82,11 @@ export class BlogListComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.isEditMode = this.blogService.getEditMode();
+
+  this.blogService.editMode$.subscribe(mode => {
+    this.isEditMode = mode;
+  });
     this.blogs$ = this.blogService.blogs$;
 
     this.blogService.stagedUpserts$.subscribe(staged => {
@@ -80,12 +110,13 @@ export class BlogListComponent implements OnInit {
 
     this.paginatedBlogs$ = combineLatest([
       this.filteredBlogs$,
-      this.pageIndex$
+      this.pageIndex$,
+      this.pageSize$
     ]).pipe(
-      map(([blogs, pageIndex]) => {
-        const start = pageIndex * this.pageSize;
-        const end = start + this.pageSize;
-        return blogs.slice(start, end);
+      map(([blogs, pageIndex, pageSize]) => {
+        const start = pageIndex * pageSize;
+    const end = start + pageSize;
+    return blogs.slice(start, end);
       })
     );
 
@@ -134,6 +165,27 @@ export class BlogListComponent implements OnInit {
   }
   }
 
+  enterEditMode(): void {
+  this.isEditMode = true;
+}
+
+exitEditMode(): void {
+  if (this.hasChanges) {
+    const confirmExit = confirm('You have unsaved changes. Do you want to discard them?');
+    if (!confirmExit) return;
+
+    this.cancelChanges(); // reuse your existing logic
+  }
+
+  this.blogService.setEditMode(false);
+  this.selectMode = false;
+  this.selectedBlogs.clear();
+}
+
+openBlog(blog: Blog): void {
+  if (this.isEditMode) return; // disable in edit mode
+  this.selectedBlog = blog;
+}
   onGenreChange(value: string): void {
     this.selectedGenre$.next(value);
     this.pageIndex$.next(0);
@@ -141,8 +193,13 @@ export class BlogListComponent implements OnInit {
     this.paginator?.firstPage();
   }
 
+  getGenreColor(genre: string): string {
+  return this.genreColors[genre] || '#607d8b'; // default gray-blue
+}
+
   onPageChange(event: any): void {
     this.pageIndex$.next(event.pageIndex);
+  this.pageSize$.next(event.pageSize);
   }
 
   searchBlogs(): void {
@@ -178,6 +235,7 @@ export class BlogListComponent implements OnInit {
       }
     });
   }
+
 
   onSearchInputChange(): void {
     if (!this.searchTerm.trim()) {
@@ -221,9 +279,11 @@ export class BlogListComponent implements OnInit {
     this.blogs$.pipe(take(1)).subscribe(blogs => {
       const updated = blogs.filter(b => b.id !== id);
       this.updateBlogs(updated);
+
+      this.hasChanges = true; // ensure UI updates
     });
 
-    this.hasChanges = true; // ensure UI updates
+    
   }
   }
 
@@ -281,8 +341,8 @@ export class BlogListComponent implements OnInit {
 
     
 
-    this.selectedBlogs.clear();
-    this.selectMode = false;
+    // this.selectedBlogs.clear();
+    // this.selectMode = false;
   }
   }
 
@@ -339,7 +399,8 @@ private finalizeSave = () => {
 
   this.snackBar.open('All changes saved!', 'Close', { duration: 3000 });
 
-  //this.loadAllBlogs();
+  this.blogService.loadAll().subscribe();
+  this.isEditMode = false;   // 👈 important
   this.hasChanges = false;
   this.loading = false;
   this.cdr.detectChanges();
