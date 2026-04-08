@@ -15,7 +15,7 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure.Repository
     public class BlogRepository : IBlogRepsitory
     {
         private readonly BlogDbContext _blogDbContext;
-        private readonly SqlConnectionFactory _connectionFactory;
+        //private readonly SqlConnectionFactory _connectionFactory;
 
         public BlogRepository(BlogDbContext blogDbContext)
         {
@@ -43,8 +43,9 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure.Repository
 
         public async Task<Blog> GetByIdAsync(int id)
         {
-            return await _blogDbContext.Blogs.AsNoTracking()
+            var blog= await _blogDbContext.Blogs.AsNoTracking()
                 .FirstOrDefaultAsync(b => b.Id == id);
+            return blog ?? throw new KeyNotFoundException($"Blog with Id {id} not found.");
         }
 
         public async Task<int> UpdateAsync(int id, Blog blog)

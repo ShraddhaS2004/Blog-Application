@@ -1,4 +1,5 @@
-﻿using CleanArchWithCQRSandMediatR.Application.Common.Interfaces;
+﻿using CleanArchWithCQRSandMediatR.Application.Blogs.Models.QueryModels;
+using CleanArchWithCQRSandMediatR.Application.Common.Interfaces;
 using Dapper;
 using System.Data; 
 
@@ -11,16 +12,18 @@ public class BlogReadRepository : IBlogReadRepository
         _connectionFactory = connectionFactory;
     }
 
-    public async Task<BlogVm?> GetByIdDapperAsync(int id)
+    public async Task<BlogVm> GetByIdDapperAsync(int id)
     {
         using var connection = _connectionFactory.CreateConnection();
 
         var sql = "SELECT Id, Name, Description, Author, Genre FROM Blogs WHERE Id = @Id";
 
-        return await connection.QueryFirstOrDefaultAsync<BlogVm>(sql, new { Id = id });
+        var blog = await connection.QueryFirstOrDefaultAsync<BlogVm>(sql, new { Id = id });
+
+        return blog ?? throw new KeyNotFoundException($"Blog with Id {id} not found");
     }
 
-    public async Task<List<BlogVm?>> GetAllDapperAsync()
+    public async Task<List<BlogVm>> GetAllDapperAsync()
     {
         using var connection=_connectionFactory.CreateConnection();
 

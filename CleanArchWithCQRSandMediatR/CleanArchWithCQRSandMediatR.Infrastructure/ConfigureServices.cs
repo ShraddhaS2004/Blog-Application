@@ -1,6 +1,9 @@
-﻿using CleanArchWithCQRSandMediatR.Application.Common.Interfaces;
+﻿using CleanArchWithCQRSandMediatR.Application.Blogs.IQueries;
+using CleanArchWithCQRSandMediatR.Application.Common.Interfaces;
 using CleanArchWithCQRSandMediatR.Domain.Repository;
 using CleanArchWithCQRSandMediatR.Infrastructure.Data;
+using CleanArchWithCQRSandMediatR.Infrastructure.QueryService;
+using CleanArchWithCQRSandMediatR.Infrastructure.QueryService.QueryHelpers;
 using CleanArchWithCQRSandMediatR.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +31,10 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure
             });
             services.AddTransient<IBlogRepsitory, BlogRepository>();
             services.AddScoped<IBlogReadRepository, BlogReadRepository>();
+            services.AddScoped<IBlogQueryService, BlogQueryService>();
+            services.AddScoped<IQueryContext, QueryContext>();
             services.AddScoped<ISqlConnectionFactory, SqlConnectionFactory>();
+            services.AddScoped<IQueryHelper, QueryHelper>();
             return services;
         }
 

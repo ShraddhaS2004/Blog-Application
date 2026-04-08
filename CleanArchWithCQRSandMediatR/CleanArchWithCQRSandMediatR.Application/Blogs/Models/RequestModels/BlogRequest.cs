@@ -1,15 +1,15 @@
-﻿using MediatR;
+﻿using CleanArchWithCQRSandMediatR.Application.Common.Mappings;
+using CleanArchWithCQRSandMediatR.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.UpdateBlog
+namespace CleanArchWithCQRSandMediatR.Application.Blogs.Models.RequestModels
 {
-    public class UpdateBlogCommand : IRequest<int>
+    public class BlogRequest : IMapFrom<Blog>
     {
-        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Author { get; set; } = string.Empty;

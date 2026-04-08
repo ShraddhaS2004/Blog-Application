@@ -11,7 +11,8 @@ namespace CleanArchWithCQRSandMediatR.Infrastructure.Data
 
         public SqlConnectionFactory(IConfiguration configuration)
         {
-            _connectionString = configuration.GetConnectionString("BlogDbContext");
+            _connectionString = configuration.GetConnectionString("BlogDbContext")
+                ?? throw new InvalidOperationException("Connection string 'BlogDbContext' not found.");
         }
 
         public IDbConnection CreateConnection()

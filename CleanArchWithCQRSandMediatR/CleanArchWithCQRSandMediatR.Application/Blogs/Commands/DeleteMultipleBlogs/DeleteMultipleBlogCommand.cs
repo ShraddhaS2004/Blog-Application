@@ -7,8 +7,8 @@ using MediatR;
 
 namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.DeleteMultipleBlogs
 {
-    public class DeleteMultipleBlogCommand : IRequest<int>
+    public class DeleteMultipleBlogCommand : IRequest<bool>
     {
-        public List<int> Ids { get; set; }
+        public List<int> Ids { get; set; } = new List<int>();
     }
 }

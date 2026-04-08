@@ -37,6 +37,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Blog } from '../models/blog';
+import { UpsertBlogsResponse } from '../models/upsert-blogs-response';
 
 @Injectable({
   providedIn: 'root'
@@ -159,13 +160,13 @@ stageUpsert(blog: Blog) {
   this.blogsSubject.next([blog, ...currentBlogs]);
   }
 
-upsert(blogs: Blog[]): Observable<any> {
+upsert(blogs: Blog[]): Observable<UpsertBlogsResponse> {
   const payload = this.stagedUpserts.map(b => ({
     ...b,
     id: b.id! < 0 ? 0 : b.id // backend interprets 0 as new blog
   }));
     // API endpoint for upsert should handle both create and update
-    return this.http.post(`${this.apiUrl}/Upsert/Upsert`, payload).pipe(
+    return this.http.post<UpsertBlogsResponse>(`${this.apiUrl}/Upsert/Upsert`, payload).pipe(
     tap(res => {
       this.tempIdCounter = -1; // reset temp counter
       this.stagedUpserts = [];

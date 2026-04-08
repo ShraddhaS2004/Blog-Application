@@ -12,15 +12,79 @@ import { MatPaginator } from '@angular/material/paginator';
 import { take, of } from 'rxjs';
 import { ChangeDetectorRef } from '@angular/core';
 import { switchMap } from 'rxjs/operators';
+import { UpsertBlogsResponse } from '../../models/upsert-blogs-response';
+import { HostListener } from '@angular/core';
+import { ElementRef } from '@angular/core';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  query,
+  stagger
+} from '@angular/animations';
 
 @Component({
   selector: 'app-blog-list',
   standalone: true,
+  animations: [
+  trigger('listAnimation', [
+    transition('* => *', [
+      query(':enter', [
+        style({ opacity: 0, transform: 'translateY(20px)' }),
+        stagger(100, [
+          animate('300ms ease-out',
+            style({ opacity: 1, transform: 'translateY(0)' })
+          )
+        ])
+      ], { optional: true }),
+
+      query(':leave', [
+        animate('200ms ease-in',
+          style({ opacity: 0, transform: 'scale(0.95)' })
+        )
+      ], { optional: true })
+    ])
+  ]),
+  trigger('fadeIn', [
+    transition(':enter', [
+      style({ opacity: 0, transform: 'translateX(20px)' }),
+      animate('250ms ease-out',
+        style({ opacity: 1, transform: 'translateX(0)' })
+      )
+    ]),
+    transition(':leave', [
+      animate('200ms ease-in',
+        style({ opacity: 0, transform: 'translateX(20px)' })
+      )
+    ])
+  ])
+],
   imports: [CommonModule, RouterModule, MaterialModule, FormsModule],
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.css']
 })
+
+
 export class BlogListComponent implements OnInit {
+
+  @HostListener('document:keydown', ['$event'])
+handleKeyboardShortcuts(event: KeyboardEvent) {
+
+  // ✅ Ctrl + Shift + K → Create blog
+  if (event.ctrlKey && event.key.toLowerCase() === 'k') {
+    event.preventDefault(); // stop browser new window
+    event.stopPropagation();
+    this.create();
+  }
+
+  // ✅ Ctrl + F → Focus search bar
+  if (event.ctrlKey && event.key.toLowerCase() === 'f') {
+    event.preventDefault(); // stop browser find
+    event.stopPropagation();
+    this.focusSearch();
+  }
+}
 
   blogs$!: Observable<Blog[]>;
   filteredBlogs$!: Observable<Blog[]>;
@@ -30,6 +94,7 @@ export class BlogListComponent implements OnInit {
   pageSizeOptions = [3, 6, 9];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
 
   private pageIndex$ = new BehaviorSubject<number>(0);
   private pageSize$ = new BehaviorSubject<number>(this.pageSize);
@@ -164,6 +229,12 @@ showLegend = false;
     }
   }
   }
+
+  focusSearch(): void {
+  setTimeout(() => {
+    this.searchInput?.nativeElement.focus();
+  });
+}
 
   enterEditMode(): void {
   this.isEditMode = true;
@@ -379,7 +450,7 @@ openBlog(blog: Blog): void {
 
   delete$
     .pipe(
-      switchMap(() : Observable<any> => {
+      switchMap(() : Observable<UpsertBlogsResponse | null> => {
         if (upserts.length > 0) {
           return this.blogService.upsert(upserts);
         }
@@ -387,7 +458,12 @@ openBlog(blog: Blog): void {
       })
     )
     .subscribe({
-      next: () => this.finalizeSave(),
+      next: (res: UpsertBlogsResponse | null) => {
+        if(res) {
+          console.log('Upserted IDs:', res.ids);
+        }
+        this.finalizeSave();
+      },
       error: () => this.showError()
     });
 }

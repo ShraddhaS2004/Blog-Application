@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using CleanArchWithCQRSandMediatR.Application.Blogs.Models.ResponseModels;
+using CleanArchWithCQRSandMediatR.Application.Blogs.Models.RequestModels;
 using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogs;
 using CleanArchWithCQRSandMediatR.Domain.Entities;
 using CleanArchWithCQRSandMediatR.Domain.Repository;
@@ -11,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.CreateBlog
 {
-    public class CreateBlogCommandHandler : IRequestHandler<CreateBlogCommand, BlogVm>
+    public class CreateBlogCommandHandler : IRequestHandler<CreateBlogCommand, BlogResponse>
     {
         private readonly IBlogRepsitory _blogRepository;
         private readonly IMapper _mapper;
@@ -21,11 +23,16 @@ namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.CreateBlog
             _blogRepository = blogRepository;
             _mapper = mapper;
         }
-        public async Task<BlogVm> Handle(CreateBlogCommand request, CancellationToken cancellationToken)
+        public async Task<BlogResponse> Handle(CreateBlogCommand request, CancellationToken cancellationToken)
         {
-            var blogEntity = new Blog() { Name = request.Name ,Description = request.Description, Author=request.Author, Genre=request.Genre};
+            var blogEntity = new Blog() {
+                Name = request.Blog.Name,
+                Description = request.Blog.Description,
+                Author = request.Blog.Author,
+                Genre = request.Blog.Genre
+            };
             var result = await _blogRepository.CreateAsync(blogEntity);
-            return _mapper.Map<BlogVm>(result);
+            return _mapper.Map<BlogResponse>(result);
         }
     }
 }

@@ -10,6 +10,6 @@ namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.UpsertBlogs
 {
     public class UpsertBlogCommand : IRequest<List<int>>
     {
-        public List<Blog> Blogs { get; set; }
+        public List<Blog> Blogs { get; set; } = new List<Blog>();
     }
 }

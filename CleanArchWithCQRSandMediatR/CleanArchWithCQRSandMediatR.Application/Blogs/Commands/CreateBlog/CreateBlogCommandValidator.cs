@@ -11,18 +11,18 @@ namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.CreateBlog
     {
         public CreateBlogCommandValidator()
         {
-            RuleFor(x => x.Name)
+            RuleFor(x => x.Blog.Name)
                 .NotEmpty().WithMessage("Name is required")
                 .MaximumLength(200).WithMessage("Name must not exceed 200 characters");
 
-            RuleFor(x => x.Description)
+            RuleFor(x => x.Blog.Description)
                 .NotEmpty().WithMessage("Description is required");
 
-            RuleFor(x=> x.Author)
+            RuleFor(x=> x.Blog.Author)
                 .NotEmpty().WithMessage("Author is required")
                 .MaximumLength(100).WithMessage("Author must not exceed 100 characters");
 
-            RuleFor(x => x.Genre)
+            RuleFor(x => x.Blog.Genre)
                 .NotEmpty().WithMessage("Genre is required")
                 .MaximumLength(50).WithMessage("Genre must not exceed 50 characters");
         }

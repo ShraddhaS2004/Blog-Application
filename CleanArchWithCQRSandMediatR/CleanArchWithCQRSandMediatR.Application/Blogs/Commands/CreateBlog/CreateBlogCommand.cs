@@ -1,4 +1,5 @@
-﻿using CleanArchWithCQRSandMediatR.Application.Blogs.Queries.GetBlogs;
+﻿using CleanArchWithCQRSandMediatR.Application.Blogs.Models.RequestModels;
+using CleanArchWithCQRSandMediatR.Application.Blogs.Models.ResponseModels;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,8 @@ using System.Threading.Tasks;
 
 namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.CreateBlog
 {
-    public class CreateBlogCommand : IRequest<BlogVm>
+    public class CreateBlogCommand : IRequest<BlogResponse>
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Author { get; set; }
-        public string Genre { get; set; }
+        public BlogRequest Blog { get; set; } = new BlogRequest();
     }
 }

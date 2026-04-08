@@ -158,10 +158,11 @@
   <mat-drawer 
   mode="over" 
   position="end" 
-  [opened]="showLegend"
+  [opened]="showLegend || selectedBlog!==null"
   autosize>
 
-  <div class="legend-container">
+  <ng-container *ngIf="showLegend">
+  <div class="legend-container" @fadeIn>
     <h2>Genre Legend</h2>
 
     <div *ngFor="let item of legendItems" class="legend-item">
@@ -176,12 +177,13 @@
       Close
     </button>
   </div>
+  </ng-container>
 
-</mat-drawer>
+<!-- </mat-drawer> -->
   <!-- SIDE PANEL -->
-  <mat-drawer mode="over" position="end" [opened]="selectedBlog !== null" autosize>
-
-    <div *ngIf="selectedBlog" class="blog-viewer">
+  <!-- <mat-drawer mode="over" position="end" [opened]="selectedBlog !== null" autosize> -->
+<ng-container *ngIf="selectedBlog">
+    <div *ngIf="selectedBlog" class="blog-viewer" @fadeIn>
       <div class="form-container">
 
       <h2 class="drawer-title">View Blog</h2>
@@ -213,7 +215,7 @@
 </form>
 </div>
     </div>
-
+</ng-container>
   </mat-drawer>
 
   <!-- MAIN CONTENT -->
@@ -282,7 +284,7 @@
 <div class="search-container" style="margin: 1rem 0;">
   <mat-form-field appearance="outline" style="width: 100%;">
     <mat-label>Search Blogs</mat-label>
-    <input matInput [(ngModel)]="searchTerm" (keyup.enter)="searchBlogs()" (input)="onSearchInputChange()" placeholder="Enter blog name or description">
+    <input matInput #searchInput [(ngModel)]="searchTerm" (keyup.enter)="searchBlogs()" (input)="onSearchInputChange()" placeholder="Enter blog name or description">
     <button
       *ngIf="searchTerm"
       mat-icon-button
@@ -341,7 +343,7 @@
     
 
     <!-- Blogs Grid -->
-    <div class="blogs-grid" *ngIf="blogs.length > 0">
+    <div class="blogs-grid" *ngIf="blogs.length > 0" [@listAnimation]="(paginatedBlogs$ | async)?.length">
       <mat-card 
   *ngFor="let blog of paginatedBlogs$ | async"
   [ngClass]="{

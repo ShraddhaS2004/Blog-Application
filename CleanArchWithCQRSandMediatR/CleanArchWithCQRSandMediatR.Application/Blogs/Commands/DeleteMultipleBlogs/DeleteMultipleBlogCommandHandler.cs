@@ -9,7 +9,7 @@ using MediatR;
 namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.DeleteMultipleBlogs
 {
     public class DeleteMultipleBlogCommandHandler
-    : IRequestHandler<DeleteMultipleBlogCommand, int>
+    : IRequestHandler<DeleteMultipleBlogCommand, bool>
     {
         private readonly IBlogRepsitory _blogRepository;
 
@@ -18,14 +18,15 @@ namespace CleanArchWithCQRSandMediatR.Application.Blogs.Commands.DeleteMultipleB
             _blogRepository = blogRepository;
         }
 
-        public async Task<int> Handle(DeleteMultipleBlogCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(DeleteMultipleBlogCommand request, CancellationToken cancellationToken)
         {
             if (request.Ids == null || !request.Ids.Any())
             {
-                return 0;
+                return false ;
             }
 
-            return await _blogRepository.DeleteMultipleAsync(request.Ids);
+            var deletedCount = await _blogRepository.DeleteMultipleAsync(request.Ids);
+            return deletedCount > 0;
         }
     }
 }
